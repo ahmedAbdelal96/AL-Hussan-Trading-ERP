@@ -1,5 +1,6 @@
 # Root-only docs / notes that should not go to the new GitHub repo
 /*.md
+!README.md
 /*.txt
 /*.js
 /*.ps1
