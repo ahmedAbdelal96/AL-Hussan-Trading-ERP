@@ -1,0 +1,34 @@
+# Dependencies
+node_modules
+
+# Build output (built inside Docker)
+dist
+*.tsbuildinfo
+
+# Dev/local config
+.env
+.env.local
+.env.development
+
+# Logs
+*.log
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+
+# Temp scripts
+tmp-*
+scripts

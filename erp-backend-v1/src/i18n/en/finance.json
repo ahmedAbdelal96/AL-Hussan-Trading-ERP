@@ -1,0 +1,15 @@
+{
+  "projectCost": {
+    "notFound": "Project cost with ID {id} not found"
+  },
+  "costCategory": {
+    "notFound": "Cost category with ID {id} not found"
+  },
+  "validation": {
+    "amountRequired": "Amount is required",
+    "amountInvalid": "Amount must be a positive number",
+    "categoryRequired": "Cost category is required",
+    "projectRequired": "Project is required",
+    "dateRequired": "Date is required"
+  }
+}

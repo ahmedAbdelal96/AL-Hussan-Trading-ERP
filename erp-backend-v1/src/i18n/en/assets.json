@@ -1,0 +1,44 @@
+{
+  "create": {
+    "success": "Asset created successfully",
+    "serialNumberExists": "Asset with serial number {number} already exists",
+    "licensePlateExists": "Asset with license plate {plate} already exists",
+    "invalidData": "Invalid asset data provided"
+  },
+  "update": {
+    "success": "Asset updated successfully",
+    "notFound": "Asset with ID {id} not found",
+    "invalidData": "Invalid asset data provided"
+  },
+  "delete": {
+    "success": "Asset deleted successfully",
+    "notFound": "Asset with ID {id} not found",
+    "inUse": "Cannot delete asset that is currently in use",
+    "underMaintenance": "Cannot delete asset that is under maintenance"
+  },
+  "get": {
+    "notFound": "Asset with ID {id} not found",
+    "fetchError": "Failed to fetch asset data"
+  },
+  "assign": {
+    "toProject": {
+      "success": "Asset assigned to project successfully",
+      "notAvailable": "Asset is not available for assignment",
+      "alreadyAssigned": "Asset is already assigned to another project"
+    },
+    "toEmployee": {
+      "success": "Asset assigned to employee successfully",
+      "alreadyAssigned": "Employee is already assigned to this asset"
+    }
+  },
+  "maintenance": {
+    "createSuccess": "Maintenance request created successfully",
+    "assetNotFound": "Asset with ID {id} not found"
+  },
+  "validation": {
+    "nameRequired": "Asset name is required",
+    "typeRequired": "Asset type is required",
+    "serialNumberRequired": "Serial number is required",
+    "statusRequired": "Asset status is required"
+  }
+}

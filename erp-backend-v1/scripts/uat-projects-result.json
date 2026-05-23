@@ -1,0 +1,623 @@
+﻿{
+    "startedAt":  "2026-03-11T22:36:32.5386170+02:00",
+    "finishedAt":  "2026-03-11T22:36:33.8355297+02:00",
+    "baseUrl":  "http://localhost:9000/api/v1",
+    "scenario":  [
+                     "create isolated asset",
+                     "create project",
+                     "update project with rowVersion",
+                     "reject stale rowVersion update",
+                     "update project progress",
+                     "assign employee to project",
+                     "assign asset to project",
+                     "validate project employees/assets endpoints",
+                     "upload/list/download/delete project documents",
+                     "validate project reports endpoints",
+                     "cleanup created entities"
+                 ],
+    "entities":  {
+                     "assetId":  "9513567c-69f9-462a-8a7a-ac7844ee52f4",
+                     "projectCode":  "PRJ-0015",
+                     "assetAssignmentId":  "aed08675-8d01-4b3b-9749-b2ee16a05dcf",
+                     "projectId":  "ee64c050-549a-4821-baae-3d618ea97712",
+                     "employeeAssignmentId":  "94a102dd-4d13-42ff-a8c0-f918717d93ae",
+                     "tempEmployeeId":  "365a42d8-c9d4-4b88-a833-720b1ee4c7a9"
+                 },
+    "baseline":  {
+                     "reportsOverview":  {
+                                             "totalProjects":  8,
+                                             "activeProjects":  1,
+                                             "planningProjects":  7,
+                                             "onHoldProjects":  0,
+                                             "completedProjects":  0,
+                                             "cancelledProjects":  0,
+                                             "totalBudget":  3020000,
+                                             "totalActualCost":  4400,
+                                             "budgetVariance":  3015600,
+                                             "budgetUtilization":  0.15,
+                                             "avgCompletion":  12.5,
+                                             "completionRate":  0,
+                                             "currency":  "SAR",
+                                             "month":  3,
+                                             "year":  2026,
+                                             "generatedAt":  "2026-03-11T20:36:33.140Z"
+                                         },
+                     "projectsStats":  {
+                                           "totalProjects":  8,
+                                           "draftProjects":  0,
+                                           "planningProjects":  7,
+                                           "activeProjects":  1,
+                                           "onHoldProjects":  0,
+                                           "completedProjects":  0,
+                                           "cancelledProjects":  0,
+                                           "completionRate":  0,
+                                           "totalBudget":  3020000,
+                                           "totalActualCost":  4400,
+                                           "budgetVariance":  3015600,
+                                           "averageCompletion":  0,
+                                           "statusBreakdown":  [
+                                                                   {
+                                                                       "status":  "PLANNING",
+                                                                       "count":  7,
+                                                                       "percentage":  87.5,
+                                                                       "totalBudget":  2520000,
+                                                                       "totalActualCost":  0,
+                                                                       "averageCompletion":  14.285714285714286
+                                                                   },
+                                                                   {
+                                                                       "status":  "ACTIVE",
+                                                                       "count":  1,
+                                                                       "percentage":  12.5,
+                                                                       "totalBudget":  500000,
+                                                                       "totalActualCost":  4400,
+                                                                       "averageCompletion":  0
+                                                                   }
+                                                               ],
+                                           "monthlyTrend":  [
+                                                                {
+                                                                    "month":  "2025-04",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2025-05",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2025-06",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2025-07",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2025-08",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2025-09",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2025-10",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2025-11",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2025-12",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2026-01",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2026-02",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                },
+                                                                {
+                                                                    "month":  "2026-03",
+                                                                    "projectsStarted":  0,
+                                                                    "projectsCompleted":  0,
+                                                                    "projectsCancelled":  0,
+                                                                    "totalBudget":  0,
+                                                                    "totalActualCost":  0,
+                                                                    "activeProjectsCount":  0
+                                                                }
+                                                            ],
+                                           "topProjectsByBudget":  [
+                                                                       {
+                                                                           "projectId":  "7e057047-97e9-470b-b79a-b9ae66041b8c",
+                                                                           "projectCode":  "PRJ-0005",
+                                                                           "projectName":  "UAT Asset Project 20260311190041",
+                                                                           "status":  "ACTIVE",
+                                                                           "budget":  500000,
+                                                                           "actualCost":  4400,
+                                                                           "budgetVariance":  495600,
+                                                                           "completionPercentage":  0,
+                                                                           "durationDays":  0
+                                                                       },
+                                                                       {
+                                                                           "projectId":  "c60d0d25-911e-4166-a566-ac9d982dc7c5",
+                                                                           "projectCode":  "PRJ-0007",
+                                                                           "projectName":  "UAT Project Full Flow 20260311210304",
+                                                                           "status":  "PLANNING",
+                                                                           "budget":  500000,
+                                                                           "actualCost":  0,
+                                                                           "budgetVariance":  500000,
+                                                                           "completionPercentage":  0,
+                                                                           "durationDays":  0
+                                                                       },
+                                                                       {
+                                                                           "projectId":  "3bf4fc6a-a163-4480-8f0a-cd53c7c4127d",
+                                                                           "projectCode":  "PRJ-0008",
+                                                                           "projectName":  "UAT Project Full Flow 20260311210331",
+                                                                           "status":  "PLANNING",
+                                                                           "budget":  500000,
+                                                                           "actualCost":  0,
+                                                                           "budgetVariance":  500000,
+                                                                           "completionPercentage":  25,
+                                                                           "durationDays":  0
+                                                                       },
+                                                                       {
+                                                                           "projectId":  "8faa3250-92c4-4be9-8b54-58b7fb89124a",
+                                                                           "projectCode":  "PRJ-0014",
+                                                                           "projectName":  "UAT Project Full Flow 20260311223559",
+                                                                           "status":  "PLANNING",
+                                                                           "budget":  500000,
+                                                                           "actualCost":  0,
+                                                                           "budgetVariance":  500000,
+                                                                           "completionPercentage":  25,
+                                                                           "durationDays":  0
+                                                                       },
+                                                                       {
+                                                                           "projectId":  "9901820c-970a-43fa-bd7f-574e2cccdfa6",
+                                                                           "projectCode":  "PRJ-0009",
+                                                                           "projectName":  "UAT Project Full Flow 20260311210401",
+                                                                           "status":  "PLANNING",
+                                                                           "budget":  500000,
+                                                                           "actualCost":  0,
+                                                                           "budgetVariance":  500000,
+                                                                           "completionPercentage":  25,
+                                                                           "durationDays":  0
+                                                                       },
+                                                                       {
+                                                                           "projectId":  "4c112692-5d5b-4cba-95ab-0b399b3dbae7",
+                                                                           "projectCode":  "PRJ-0011",
+                                                                           "projectName":  "UAT Project Full Flow 20260311222858",
+                                                                           "status":  "PLANNING",
+                                                                           "budget":  500000,
+                                                                           "actualCost":  0,
+                                                                           "budgetVariance":  500000,
+                                                                           "completionPercentage":  25,
+                                                                           "durationDays":  0
+                                                                       },
+                                                                       {
+                                                                           "projectId":  "502085c0-169b-4d2c-a410-2cdc3fbf33aa",
+                                                                           "projectCode":  "PRJ-0012",
+                                                                           "projectName":  "UAT Upload Probe 20260311222948",
+                                                                           "status":  "PLANNING",
+                                                                           "budget":  10000,
+                                                                           "actualCost":  0,
+                                                                           "budgetVariance":  10000,
+                                                                           "completionPercentage":  0,
+                                                                           "durationDays":  0
+                                                                       },
+                                                                       {
+                                                                           "projectId":  "ad72e76a-7f51-44ee-a743-a6c7b93a1a5c",
+                                                                           "projectCode":  "PRJ-0013",
+                                                                           "projectName":  "UAT Upload Probe2 20260311223020",
+                                                                           "status":  "PLANNING",
+                                                                           "budget":  10000,
+                                                                           "actualCost":  0,
+                                                                           "budgetVariance":  10000,
+                                                                           "completionPercentage":  0,
+                                                                           "durationDays":  0
+                                                                       }
+                                                                   ],
+                                           "topProjectsByCost":  [
+                                                                     {
+                                                                         "projectId":  "7e057047-97e9-470b-b79a-b9ae66041b8c",
+                                                                         "projectCode":  "PRJ-0005",
+                                                                         "projectName":  "UAT Asset Project 20260311190041",
+                                                                         "status":  "ACTIVE",
+                                                                         "budget":  500000,
+                                                                         "actualCost":  4400,
+                                                                         "budgetVariance":  495600,
+                                                                         "completionPercentage":  0,
+                                                                         "durationDays":  0
+                                                                     }
+                                                                 ],
+                                           "employeeDistribution":  [
+                                                                        {
+                                                                            "projectId":  "8faa3250-92c4-4be9-8b54-58b7fb89124a",
+                                                                            "projectName":  "UAT Project Full Flow 20260311223559",
+                                                                            "employeeCount":  1,
+                                                                            "totalEmployeeCost":  0
+                                                                        },
+                                                                        {
+                                                                            "projectId":  "4c112692-5d5b-4cba-95ab-0b399b3dbae7",
+                                                                            "projectName":  "UAT Project Full Flow 20260311222858",
+                                                                            "employeeCount":  1,
+                                                                            "totalEmployeeCost":  0
+                                                                        },
+                                                                        {
+                                                                            "projectId":  "3bf4fc6a-a163-4480-8f0a-cd53c7c4127d",
+                                                                            "projectName":  "UAT Project Full Flow 20260311210331",
+                                                                            "employeeCount":  1,
+                                                                            "totalEmployeeCost":  0
+                                                                        }
+                                                                    ],
+                                           "siteDistribution":  [
+
+                                                                ],
+                                           "generatedAt":  "2026-03-11T20:36:33.116Z"
+                                       }
+                 },
+    "after":  {
+                  "reportsOverview":  {
+                                          "totalProjects":  8,
+                                          "activeProjects":  1,
+                                          "planningProjects":  7,
+                                          "onHoldProjects":  0,
+                                          "completedProjects":  0,
+                                          "cancelledProjects":  0,
+                                          "totalBudget":  3020000,
+                                          "totalActualCost":  4400,
+                                          "budgetVariance":  3015600,
+                                          "budgetUtilization":  0.15,
+                                          "avgCompletion":  12.5,
+                                          "completionRate":  0,
+                                          "currency":  "SAR",
+                                          "month":  3,
+                                          "year":  2026,
+                                          "generatedAt":  "2026-03-11T20:36:33.832Z"
+                                      },
+                  "projectsStats":  {
+                                        "totalProjects":  8,
+                                        "draftProjects":  0,
+                                        "planningProjects":  7,
+                                        "activeProjects":  1,
+                                        "onHoldProjects":  0,
+                                        "completedProjects":  0,
+                                        "cancelledProjects":  0,
+                                        "completionRate":  0,
+                                        "totalBudget":  3020000,
+                                        "totalActualCost":  4400,
+                                        "budgetVariance":  3015600,
+                                        "averageCompletion":  0,
+                                        "statusBreakdown":  [
+                                                                {
+                                                                    "status":  "PLANNING",
+                                                                    "count":  7,
+                                                                    "percentage":  87.5,
+                                                                    "totalBudget":  2520000,
+                                                                    "totalActualCost":  0,
+                                                                    "averageCompletion":  14.285714285714286
+                                                                },
+                                                                {
+                                                                    "status":  "ACTIVE",
+                                                                    "count":  1,
+                                                                    "percentage":  12.5,
+                                                                    "totalBudget":  500000,
+                                                                    "totalActualCost":  4400,
+                                                                    "averageCompletion":  0
+                                                                }
+                                                            ],
+                                        "monthlyTrend":  [
+                                                             {
+                                                                 "month":  "2025-04",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2025-05",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2025-06",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2025-07",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2025-08",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2025-09",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2025-10",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2025-11",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2025-12",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2026-01",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2026-02",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             },
+                                                             {
+                                                                 "month":  "2026-03",
+                                                                 "projectsStarted":  0,
+                                                                 "projectsCompleted":  0,
+                                                                 "projectsCancelled":  0,
+                                                                 "totalBudget":  0,
+                                                                 "totalActualCost":  0,
+                                                                 "activeProjectsCount":  0
+                                                             }
+                                                         ],
+                                        "topProjectsByBudget":  [
+                                                                    {
+                                                                        "projectId":  "7e057047-97e9-470b-b79a-b9ae66041b8c",
+                                                                        "projectCode":  "PRJ-0005",
+                                                                        "projectName":  "UAT Asset Project 20260311190041",
+                                                                        "status":  "ACTIVE",
+                                                                        "budget":  500000,
+                                                                        "actualCost":  4400,
+                                                                        "budgetVariance":  495600,
+                                                                        "completionPercentage":  0,
+                                                                        "durationDays":  0
+                                                                    },
+                                                                    {
+                                                                        "projectId":  "c60d0d25-911e-4166-a566-ac9d982dc7c5",
+                                                                        "projectCode":  "PRJ-0007",
+                                                                        "projectName":  "UAT Project Full Flow 20260311210304",
+                                                                        "status":  "PLANNING",
+                                                                        "budget":  500000,
+                                                                        "actualCost":  0,
+                                                                        "budgetVariance":  500000,
+                                                                        "completionPercentage":  0,
+                                                                        "durationDays":  0
+                                                                    },
+                                                                    {
+                                                                        "projectId":  "3bf4fc6a-a163-4480-8f0a-cd53c7c4127d",
+                                                                        "projectCode":  "PRJ-0008",
+                                                                        "projectName":  "UAT Project Full Flow 20260311210331",
+                                                                        "status":  "PLANNING",
+                                                                        "budget":  500000,
+                                                                        "actualCost":  0,
+                                                                        "budgetVariance":  500000,
+                                                                        "completionPercentage":  25,
+                                                                        "durationDays":  0
+                                                                    },
+                                                                    {
+                                                                        "projectId":  "8faa3250-92c4-4be9-8b54-58b7fb89124a",
+                                                                        "projectCode":  "PRJ-0014",
+                                                                        "projectName":  "UAT Project Full Flow 20260311223559",
+                                                                        "status":  "PLANNING",
+                                                                        "budget":  500000,
+                                                                        "actualCost":  0,
+                                                                        "budgetVariance":  500000,
+                                                                        "completionPercentage":  25,
+                                                                        "durationDays":  0
+                                                                    },
+                                                                    {
+                                                                        "projectId":  "9901820c-970a-43fa-bd7f-574e2cccdfa6",
+                                                                        "projectCode":  "PRJ-0009",
+                                                                        "projectName":  "UAT Project Full Flow 20260311210401",
+                                                                        "status":  "PLANNING",
+                                                                        "budget":  500000,
+                                                                        "actualCost":  0,
+                                                                        "budgetVariance":  500000,
+                                                                        "completionPercentage":  25,
+                                                                        "durationDays":  0
+                                                                    },
+                                                                    {
+                                                                        "projectId":  "4c112692-5d5b-4cba-95ab-0b399b3dbae7",
+                                                                        "projectCode":  "PRJ-0011",
+                                                                        "projectName":  "UAT Project Full Flow 20260311222858",
+                                                                        "status":  "PLANNING",
+                                                                        "budget":  500000,
+                                                                        "actualCost":  0,
+                                                                        "budgetVariance":  500000,
+                                                                        "completionPercentage":  25,
+                                                                        "durationDays":  0
+                                                                    },
+                                                                    {
+                                                                        "projectId":  "502085c0-169b-4d2c-a410-2cdc3fbf33aa",
+                                                                        "projectCode":  "PRJ-0012",
+                                                                        "projectName":  "UAT Upload Probe 20260311222948",
+                                                                        "status":  "PLANNING",
+                                                                        "budget":  10000,
+                                                                        "actualCost":  0,
+                                                                        "budgetVariance":  10000,
+                                                                        "completionPercentage":  0,
+                                                                        "durationDays":  0
+                                                                    },
+                                                                    {
+                                                                        "projectId":  "ad72e76a-7f51-44ee-a743-a6c7b93a1a5c",
+                                                                        "projectCode":  "PRJ-0013",
+                                                                        "projectName":  "UAT Upload Probe2 20260311223020",
+                                                                        "status":  "PLANNING",
+                                                                        "budget":  10000,
+                                                                        "actualCost":  0,
+                                                                        "budgetVariance":  10000,
+                                                                        "completionPercentage":  0,
+                                                                        "durationDays":  0
+                                                                    }
+                                                                ],
+                                        "topProjectsByCost":  [
+                                                                  {
+                                                                      "projectId":  "7e057047-97e9-470b-b79a-b9ae66041b8c",
+                                                                      "projectCode":  "PRJ-0005",
+                                                                      "projectName":  "UAT Asset Project 20260311190041",
+                                                                      "status":  "ACTIVE",
+                                                                      "budget":  500000,
+                                                                      "actualCost":  4400,
+                                                                      "budgetVariance":  495600,
+                                                                      "completionPercentage":  0,
+                                                                      "durationDays":  0
+                                                                  }
+                                                              ],
+                                        "employeeDistribution":  [
+                                                                     {
+                                                                         "projectId":  "8faa3250-92c4-4be9-8b54-58b7fb89124a",
+                                                                         "projectName":  "UAT Project Full Flow 20260311223559",
+                                                                         "employeeCount":  1,
+                                                                         "totalEmployeeCost":  0
+                                                                     },
+                                                                     {
+                                                                         "projectId":  "4c112692-5d5b-4cba-95ab-0b399b3dbae7",
+                                                                         "projectName":  "UAT Project Full Flow 20260311222858",
+                                                                         "employeeCount":  1,
+                                                                         "totalEmployeeCost":  0
+                                                                     },
+                                                                     {
+                                                                         "projectId":  "3bf4fc6a-a163-4480-8f0a-cd53c7c4127d",
+                                                                         "projectName":  "UAT Project Full Flow 20260311210331",
+                                                                         "employeeCount":  1,
+                                                                         "totalEmployeeCost":  0
+                                                                     }
+                                                                 ],
+                                        "siteDistribution":  [
+
+                                                             ],
+                                        "generatedAt":  "2026-03-11T20:36:33.814Z"
+                                    }
+              },
+    "checks":  {
+                   "assetAssignmentsCount":  1,
+                   "projectProgress":  25,
+                   "staleRowVersionRejected":  true,
+                   "employeeAssignmentsCount":  1
+               },
+    "cleanup":  {
+                    "attempted":  true,
+                    "documentDeleted":  true,
+                    "assetReturned":  true,
+                    "employeeUnassigned":  true,
+                    "projectDeleted":  true,
+                    "assetDeleted":  true,
+                    "tempFileDeleted":  true,
+                    "errors":  [
+
+                               ]
+                },
+    "pass":  true
+}

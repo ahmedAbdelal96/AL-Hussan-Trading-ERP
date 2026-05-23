@@ -1,0 +1,48 @@
+{
+  "create": {
+    "success": "Employee created successfully",
+    "nationalIdExists": "National ID already exists",
+    "emailExists": "Email already exists",
+    "invalidData": "Invalid employee data provided"
+  },
+  "update": {
+    "success": "Employee updated successfully",
+    "notFound": "Employee not found",
+    "nationalIdExists": "National ID already exists",
+    "emailExists": "Email already exists",
+    "invalidData": "Invalid employee data provided"
+  },
+  "delete": {
+    "success": "Employee deleted successfully",
+    "notFound": "Employee not found",
+    "hasDependencies": "Cannot delete employee with associated records"
+  },
+  "get": {
+    "notFound": "Employee not found",
+    "fetchError": "Failed to fetch employee data"
+  },
+  "list": {
+    "fetchError": "Failed to fetch employees list"
+  },
+  "bulk": {
+    "createSuccess": "{count} employee(s) created successfully",
+    "createPartial": "{success} employee(s) created, {failed} failed",
+    "createError": "Failed to create employees",
+    "duplicateNationalIds": "Duplicate national IDs in batch: {ids}",
+    "duplicateEmails": "Duplicate emails in batch: {emails}",
+    "nationalIdExists": "National ID already exists: {id}",
+    "emailExists": "Email already exists: {email}"
+  },
+  "validation": {
+    "firstNameRequired": "First name is required",
+    "lastNameRequired": "Last name is required",
+    "nationalIdRequired": "National ID is required",
+    "nationalIdInvalid": "Invalid national ID format",
+    "emailInvalid": "Invalid email format",
+    "phoneInvalid": "Invalid phone number format",
+    "hireDateRequired": "Hire date is required",
+    "birthDateInvalid": "Invalid birth date",
+    "positionRequired": "Position is required",
+    "departmentRequired": "Department is required"
+  }
+}

@@ -1,0 +1,17 @@
+﻿User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /finance
+Disallow: /employees
+Disallow: /projects
+Disallow: /assets
+Disallow: /maintenance
+Disallow: /payroll
+Disallow: /users
+Disallow: /rbac
+Disallow: /reports
+Disallow: /sites
+Disallow: /profile
+Disallow: /admin
+Disallow: /403
+Sitemap: https://alhussan.tech/sitemap.xml

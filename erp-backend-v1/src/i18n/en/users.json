@@ -1,0 +1,45 @@
+{
+  "create": {
+    "success": "User created successfully",
+    "emailExists": "Email already exists",
+    "invalidData": "Invalid user data provided"
+  },
+  "update": {
+    "success": "User updated successfully",
+    "emailExists": "Email already exists",
+    "cannotDeactivateOwn": "Cannot deactivate your own account",
+    "invalidData": "Invalid user data provided"
+  },
+  "delete": {
+    "success": "User deleted successfully",
+    "permanentSuccess": "User permanently deleted successfully",
+    "cannotDeleteOwn": "Cannot delete your own account",
+    "cannotDeleteSuperadmin": "Cannot delete SUPERADMIN account",
+    "hasDependencies": "Cannot delete user with associated records"
+  },
+  "get": {
+    "notFound": "User not found",
+    "fetchError": "Failed to fetch user data"
+  },
+  "list": {
+    "fetchError": "Failed to fetch users list"
+  },
+  "password": {
+    "resetSuccess": "Password reset successfully",
+    "resetError": "Failed to reset password"
+  },
+  "bulk": {
+    "createSuccess": "{count} user(s) created successfully",
+    "createPartial": "{success} user(s) created, {failed} failed",
+    "createError": "Failed to create users"
+  },
+  "validation": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "firstNameRequired": "First name is required",
+    "lastNameRequired": "Last name is required",
+    "phoneInvalid": "Invalid phone number format",
+    "passwordRequired": "Password is required",
+    "passwordWeak": "Password does not meet security requirements"
+  }
+}

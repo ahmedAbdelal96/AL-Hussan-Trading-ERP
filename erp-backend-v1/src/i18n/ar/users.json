@@ -1,0 +1,45 @@
+{
+  "create": {
+    "success": "تم إنشاء المستخدم بنجاح",
+    "emailExists": "البريد الإلكتروني موجود بالفعل",
+    "invalidData": "بيانات المستخدم غير صالحة"
+  },
+  "update": {
+    "success": "تم تحديث المستخدم بنجاح",
+    "emailExists": "البريد الإلكتروني موجود بالفعل",
+    "cannotDeactivateOwn": "لا يمكنك تعطيل حسابك الخاص",
+    "invalidData": "بيانات المستخدم غير صالحة"
+  },
+  "delete": {
+    "success": "تم حذف المستخدم بنجاح",
+    "permanentSuccess": "تم حذف المستخدم نهائياً بنجاح",
+    "cannotDeleteOwn": "لا يمكنك حذف حسابك الخاص",
+    "cannotDeleteSuperadmin": "لا يمكن حذف حساب المسؤول الرئيسي",
+    "hasDependencies": "لا يمكن حذف مستخدم له سجلات مرتبطة"
+  },
+  "get": {
+    "notFound": "المستخدم غير موجود",
+    "fetchError": "فشل في جلب بيانات المستخدم"
+  },
+  "list": {
+    "fetchError": "فشل في جلب قائمة المستخدمين"
+  },
+  "password": {
+    "resetSuccess": "تم إعادة تعيين كلمة المرور بنجاح",
+    "resetError": "فشل في إعادة تعيين كلمة المرور"
+  },
+  "bulk": {
+    "createSuccess": "تم إنشاء {count} مستخدم بنجاح",
+    "createPartial": "تم إنشاء {success} مستخدم، فشل {failed}",
+    "createError": "فشل في إنشاء المستخدمين"
+  },
+  "validation": {
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailInvalid": "تنسيق البريد الإلكتروني غير صحيح",
+    "firstNameRequired": "الاسم الأول مطلوب",
+    "lastNameRequired": "الاسم الأخير مطلوب",
+    "phoneInvalid": "تنسيق رقم الهاتف غير صحيح",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordWeak": "كلمة المرور لا تلبي متطلبات الأمان"
+  }
+}

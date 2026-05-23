@@ -1,0 +1,15 @@
+{
+  "projectCost": {
+    "notFound": "تكلفة المشروع بالمعرف {id} غير موجودة"
+  },
+  "costCategory": {
+    "notFound": "فئة التكلفة بالمعرف {id} غير موجودة"
+  },
+  "validation": {
+    "amountRequired": "المبلغ مطلوب",
+    "amountInvalid": "المبلغ يجب أن يكون رقم موجب",
+    "categoryRequired": "فئة التكلفة مطلوبة",
+    "projectRequired": "المشروع مطلوب",
+    "dateRequired": "التاريخ مطلوب"
+  }
+}

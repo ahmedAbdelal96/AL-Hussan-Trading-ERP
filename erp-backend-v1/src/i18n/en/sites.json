@@ -1,0 +1,43 @@
+{
+  "create": {
+    "success": "Site created successfully",
+    "codeExists": "Site code already exists",
+    "invalidData": "Invalid site data provided"
+  },
+  "update": {
+    "success": "Site updated successfully",
+    "notFound": "Site not found",
+    "codeExists": "Site code already exists",
+    "invalidData": "Invalid site data provided"
+  },
+  "delete": {
+    "success": "Site deleted successfully",
+    "notFound": "Site not found",
+    "hasDependencies": "Cannot delete site with associated records"
+  },
+  "restore": {
+    "notDeleted": "Site \"{name}\" is not deleted"
+  },
+  "get": {
+    "notFound": "Site not found",
+    "fetchError": "Failed to fetch site data"
+  },
+  "list": {
+    "fetchError": "Failed to fetch sites list"
+  },
+  "bulk": {
+    "createSuccess": "{count} site(s) created successfully",
+    "createPartial": "{success} site(s) created, {failed} failed",
+    "createError": "Failed to create sites",
+    "duplicateCodes": "Duplicate site codes in batch: {codes}",
+    "codeExists": "Site code already exists: {code}"
+  },
+  "validation": {
+    "nameRequired": "Site name is required",
+    "codeRequired": "Site code is required",
+    "codeInvalid": "Invalid site code format",
+    "locationRequired": "Location is required",
+    "addressRequired": "Address is required",
+    "typeRequired": "Site type is required"
+  }
+}

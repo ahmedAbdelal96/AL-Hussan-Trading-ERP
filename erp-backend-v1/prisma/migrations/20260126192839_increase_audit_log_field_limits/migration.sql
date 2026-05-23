@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "audit_logs" ALTER COLUMN "resource_type" SET DATA TYPE VARCHAR(100),
+ALTER COLUMN "resource_name" SET DATA TYPE VARCHAR(500),
+ALTER COLUMN "request_url" SET DATA TYPE VARCHAR(1000);

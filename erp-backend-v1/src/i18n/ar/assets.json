@@ -1,0 +1,44 @@
+{
+  "create": {
+    "success": "تم إنشاء الأصل بنجاح",
+    "serialNumberExists": "الأصل بالرقم التسلسلي {number} موجود بالفعل",
+    "licensePlateExists": "الأصل برقم اللوحة {plate} موجود بالفعل",
+    "invalidData": "بيانات الأصل غير صحيحة"
+  },
+  "update": {
+    "success": "تم تحديث الأصل بنجاح",
+    "notFound": "الأصل بالمعرف {id} غير موجود",
+    "invalidData": "بيانات الأصل غير صحيحة"
+  },
+  "delete": {
+    "success": "تم حذف الأصل بنجاح",
+    "notFound": "الأصل بالمعرف {id} غير موجود",
+    "inUse": "لا يمكن حذف الأصل المستخدم حالياً",
+    "underMaintenance": "لا يمكن حذف الأصل الذي يخضع للصيانة"
+  },
+  "get": {
+    "notFound": "الأصل بالمعرف {id} غير موجود",
+    "fetchError": "فشل في جلب بيانات الأصل"
+  },
+  "assign": {
+    "toProject": {
+      "success": "تم تعيين الأصل للمشروع بنجاح",
+      "notAvailable": "الأصل غير متاح للتعيين",
+      "alreadyAssigned": "الأصل معين بالفعل لمشروع آخر"
+    },
+    "toEmployee": {
+      "success": "تم تعيين الأصل للموظف بنجاح",
+      "alreadyAssigned": "الموظف معين بالفعل لهذا الأصل"
+    }
+  },
+  "maintenance": {
+    "createSuccess": "تم إنشاء طلب الصيانة بنجاح",
+    "assetNotFound": "الأصل بالمعرف {id} غير موجود"
+  },
+  "validation": {
+    "nameRequired": "اسم الأصل مطلوب",
+    "typeRequired": "نوع الأصل مطلوب",
+    "serialNumberRequired": "الرقم التسلسلي مطلوب",
+    "statusRequired": "حالة الأصل مطلوبة"
+  }
+}

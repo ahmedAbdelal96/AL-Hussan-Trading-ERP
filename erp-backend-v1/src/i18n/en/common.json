@@ -1,0 +1,9 @@
+{
+  "errors": {
+    "unexpected": "An unexpected error occurred",
+    "concurrentUpdate": "The data was modified by another user. Please refresh and try again",
+    "notFound": "The requested item was not found",
+    "unauthorized": "You are not authorized to access this resource",
+    "forbidden": "You don't have permission to perform this action"
+  }
+}

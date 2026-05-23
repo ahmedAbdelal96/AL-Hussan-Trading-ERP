@@ -1,0 +1,662 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap");
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ===== Theme Variables (CSS Variables for Light/Dark Mode) ===== */
+:root {
+  /* ===== Brand (Blue Corporate) ===== */
+  --primary-main: #1e40af;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e3a8a;
+  --primary-bg: rgba(30, 64, 175, 0.08);
+
+  /* ===== Backgrounds ===== */
+  --background: #f9fafb; /* Cool gray */
+  --background-sec: #eef2f7;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --surface-secondary: #f8fafc;
+  --background-light: #ffffff;
+  --sidebar-bg: #ffffff;
+
+  /* ===== Borders ===== */
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
+
+  /* ===== Text ===== */
+  --text-primary: #0f172a; /* Slate 900 */
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  --text-disabled: #cbd5e1;
+  --text-on-brand: #ffffff;
+
+  /* ===== Icons ===== */
+  --icon-primary: #334155;
+  --icon-secondary: #64748b;
+  --icon-tertiary: #cbd5e1;
+
+  /* ===== Inputs ===== */
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-focus-border: #1e40af;
+  --input-disabled: #f1f5f9;
+
+  /* ===== Status ===== */
+  --success: #15803d;
+  --warning: #d97706;
+  --error: #b91c1c;
+  --info: #1e40af;
+}
+
+html.dark {
+  /* ===== Brand (Keep your blue) ===== */
+  --primary-main: #60a5fa;
+  --primary-light: #93c5fd;
+  --primary-dark: #3b82f6;
+  --primary-bg: rgba(96, 165, 250, 0.14);
+
+  /* ===== Backgrounds (Neutral charcoal) ===== */
+  --background: #141414;
+  --background-sec: #161616;
+  --surface: #1c1c1c;
+  --surface-hover: #242424;
+  --surface-secondary: #181818;
+  --background-light: #1e1e1e;
+  --sidebar-bg: #151515;
+
+  /* NEW (safe additions): better layers */
+  --overlay: rgba(0, 0, 0, 0.55);
+  --table-row: #1a1a1a;
+  --table-row-alt: #1e1e1e;
+  --table-row-hover: #262626;
+
+  /* ===== Borders ===== */
+  --border: #2a2a2a;
+  --border-hover: #3a3a3a;
+
+  /* ===== Text ===== */
+  --text-primary: #ededed; /* أخف شوية من f1f1f1 */
+  --text-secondary: #c7c7c7;
+  --text-tertiary: #9a9a9a;
+  --text-disabled: #6f6f6f;
+  --text-on-brand: #ffffff;
+
+  /* ===== Icons ===== */
+  --icon-primary: #e5e5e5;
+  --icon-secondary: #a3a3a3;
+  --icon-tertiary: #737373;
+
+  /* ===== Inputs ===== */
+  --input-bg: #1c1c1c;
+  --input-border: #2a2a2a;
+  --input-focus-border: #60a5fa;
+  --input-disabled: #141414;
+
+  /* ===== Status ===== */
+  --success: #22c55e;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --info: #60a5fa;
+}
+
+@theme {
+  --font-*: initial;
+  --font-outfit: Outfit, sans-serif;
+  --font-arabic:
+    Tajawal, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-english:
+    Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+  --breakpoint-*: initial;
+  --breakpoint-2xsm: 375px;
+  --breakpoint-xsm: 425px;
+  --breakpoint-3xl: 2000px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --text-title-2xl: 72px;
+  --text-title-2xl--line-height: 90px;
+  --text-title-xl: 60px;
+  --text-title-xl--line-height: 72px;
+  --text-title-lg: 48px;
+  --text-title-lg--line-height: 60px;
+  --text-title-md: 36px;
+  --text-title-md--line-height: 44px;
+  --text-title-sm: 30px;
+  --text-title-sm--line-height: 38px;
+  --text-theme-xl: 20px;
+  --text-theme-xl--line-height: 30px;
+  --text-theme-sm: 14px;
+  --text-theme-sm--line-height: 20px;
+  --text-theme-xs: 12px;
+  --text-theme-xs--line-height: 18px;
+
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-white: #ffffff;
+  --color-black: #141414;
+
+  /* Brand scale (blue) */
+  --color-brand-25: #eff6ff;
+  --color-brand-50: #dbeafe;
+  --color-brand-100: #bfdbfe;
+  --color-brand-200: #93c5fd;
+  --color-brand-300: #60a5fa;
+  --color-brand-400: #3b82f6;
+  --color-brand-500: #2563eb;
+  --color-brand-600: #1d4ed8;
+  --color-brand-700: #1e40af;
+
+  /* IMPORTANT: keep brand 800 blue, but make 900/950 neutral to match dark mode */
+  --color-brand-800: #1e3a8a;
+  --color-brand-900: #1a1a1a;
+  --color-brand-950: #141414;
+
+  /* Blue-light colors - adjusted to complement red theme */
+  --color-blue-light-25: #f0f9ff;
+  --color-blue-light-50: #e0f2fe;
+  --color-blue-light-100: #bae6fd;
+  --color-blue-light-200: #7dd3fc;
+  --color-blue-light-300: #38bdf8;
+  --color-blue-light-400: #0ea5e9;
+  --color-blue-light-500: #0284c7;
+  --color-blue-light-600: #0369a1;
+  --color-blue-light-700: #075985;
+  --color-blue-light-800: #0c4a6e;
+  --color-blue-light-900: #082f49;
+  --color-blue-light-950: #0a1e2e;
+
+  /* Gray colors - warm variants for dark mode */
+  --color-gray-25: #fcfcfd;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f2f4f7;
+  --color-gray-200: #e4e7ec;
+  --color-gray-300: #d0d5dd;
+  --color-gray-400: #98a2b3;
+  --color-gray-500: #667085;
+  --color-gray-600: #475467;
+  --color-gray-700: #344054;
+  --color-gray-800: #1d2939;
+  --color-gray-900: #101828;
+  --color-gray-950: #0c111d;
+
+  /* Warm gray variants for dark mode */
+  --color-gray-dark: #1a1212;
+  --color-gray-warm-25: #fcfaf9;
+  --color-gray-warm-50: #f9f5f5;
+  --color-gray-warm-100: #f2ebeb;
+  --color-gray-warm-200: #e4dada;
+  --color-gray-warm-300: #d0c2c2;
+  --color-gray-warm-400: #a89292;
+  --color-gray-warm-500: #7a6666;
+  --color-gray-warm-600: #5a4545;
+  --color-gray-warm-700: #3d2e2e;
+  --color-gray-warm-800: #251a1a;
+  --color-gray-warm-900: #150d0d;
+  --color-gray-warm-950: #0f0a0a;
+
+  --color-orange-25: #fffaf5;
+  --color-orange-50: #fff6ed;
+  --color-orange-100: #ffead5;
+  --color-orange-200: #fddcab;
+  --color-orange-300: #feb273;
+  --color-orange-400: #fd853a;
+  --color-orange-500: #fb6514;
+  --color-orange-600: #ec4a0a;
+  --color-orange-700: #c4320a;
+  --color-orange-800: #9c2a10;
+  --color-orange-900: #7e2410;
+  --color-orange-950: #511c10;
+
+  --color-success-25: #f6fef9;
+  --color-success-50: #ecfdf3;
+  --color-success-100: #d1fadf;
+  --color-success-200: #a6f4c5;
+  --color-success-300: #6ce9a6;
+  --color-success-400: #32d583;
+  --color-success-500: #12b76a;
+  --color-success-600: #039855;
+  --color-success-700: #027a48;
+  --color-success-800: #05603a;
+  --color-success-900: #054f31;
+  --color-success-950: #053321;
+
+  --color-error-25: #fef2f2;
+  --color-error-50: #fee2e2;
+  --color-error-100: #fecaca;
+  --color-error-200: #fca5a5;
+  --color-error-300: #f87171;
+  --color-error-400: #ef4444;
+  --color-error-500: #dc2626; /* Error red */
+  --color-error-600: #b91c1c;
+  --color-error-700: #991b1b;
+  --color-error-800: #7f1d1d;
+  --color-error-900: #450a0a;
+  --color-error-950: #2d0505;
+
+  --color-warning-25: #fffcf5;
+  --color-warning-50: #fffaeb;
+  --color-warning-100: #fef0c7;
+  --color-warning-200: #fedf89;
+  --color-warning-300: #fec84b;
+  --color-warning-400: #fdb022;
+  --color-warning-500: #f79009;
+  --color-warning-600: #dc6803;
+  --color-warning-700: #b54708;
+  --color-warning-800: #93370d;
+  --color-warning-900: #7a2e0e;
+  --color-warning-950: #4e1d09;
+
+  --color-theme-pink-500: #ee46bc;
+  --color-theme-purple-500: #7a5af8;
+
+  /* Semantic Colors using CSS variables for consistency */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-placeholder: light-dark(#98a2b3, #667085);
+  --color-text-inverse: light-dark(#ffffff, #101828);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-on-brand: var(--text-on-brand);
+  --color-icon-primary: var(--icon-primary);
+  --color-icon-secondary: var(--icon-secondary);
+  --color-icon-tertiary: var(--icon-tertiary);
+
+  /* Primary colors */
+  --color-primary-main: var(--primary-main);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-bg: var(--primary-bg);
+
+  /* Input colors */
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-focus-border: var(--input-focus-border);
+  --color-input-disabled: var(--input-disabled);
+
+  /* Status colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Card colors - integrated with theme */
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text-primary);
+
+  /* UI Component colors - integrated with theme */
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--text-primary);
+  --color-muted: var(--surface-secondary);
+  --color-muted-foreground: var(--text-tertiary);
+  --color-accent: var(--surface-hover);
+  --color-accent-foreground: var(--text-primary);
+  --color-destructive: var(--error);
+  --color-destructive-foreground: #ffffff;
+  --color-ring: var(--primary-main);
+  --color-secondary: var(--surface-secondary);
+  --color-secondary-foreground: var(--text-primary);
+
+  --shadow-theme-md:
+    0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  --shadow-theme-lg:
+    0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-theme-sm:
+    0px 1px 3px 0px rgba(16, 24, 40, 0.1),
+    0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+  --shadow-theme-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-theme-xl:
+    0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+    0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+
+  --z-index-1: 1;
+  --z-index-9: 9;
+  --z-index-99: 99;
+  --z-index-999: 999;
+  --z-index-9999: 9999;
+  --z-index-99999: 99999;
+  --z-index-999999: 999999;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--border);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    @apply relative font-normal z-1;
+    font-family: var(--font-outfit);
+    background-color: var(--background);
+    color: var(--text-primary);
+    scrollbar-gutter: stable;
+    overflow-y: scroll !important;
+  }
+
+  /* ✅ Auto switch font by document language */
+  html[lang="ar"] body {
+    font-family: var(--font-arabic);
+  }
+
+  html[lang="en"] body {
+    font-family: var(--font-english);
+  }
+
+  /* Ensure dark mode uses warm grays */
+  .dark body {
+    background-color: var(--background);
+    color: var(--text-primary);
+  }
+
+  .dark *,
+  .dark ::after,
+  .dark ::before,
+  .dark ::backdrop,
+  .dark ::file-selector-button {
+    border-color: var(--border);
+  }
+}
+
+@utility menu-item {
+  @apply relative flex items-center w-full gap-3 px-3 py-2 font-medium rounded-lg text-theme-sm;
+}
+
+@utility menu-item-active {
+  @apply bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400;
+}
+
+@utility menu-item-inactive {
+  @apply hover:bg-gray-100 dark:hover:bg-white/5;
+  color: var(--text-secondary);
+}
+
+@utility menu-item-icon {
+  color: var(--icon-secondary);
+}
+@utility menu-item-icon-inactive {
+  color: var(--icon-secondary);
+}
+
+@utility menu-item-icon-size {
+  & svg {
+    @apply !size-6;
+  }
+}
+
+@utility menu-item-icon-inactive {
+  @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+}
+
+@utility menu-item-arrow {
+  @apply relative;
+}
+
+@utility menu-item-arrow-active {
+  @apply rotate-180 text-brand-500 dark:text-brand-400;
+}
+
+@utility menu-item-arrow-inactive {
+  @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+}
+
+@utility menu-dropdown-item {
+  @apply relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-theme-sm font-medium;
+}
+
+@utility menu-dropdown-item-active {
+  @apply bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400;
+}
+
+@utility menu-dropdown-item-inactive {
+  @apply text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5;
+}
+
+@utility menu-dropdown-badge {
+  @apply block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase text-brand-500 dark:text-brand-400;
+}
+
+@utility menu-dropdown-badge-active {
+  @apply bg-brand-100 dark:bg-brand-500/20;
+}
+
+@utility menu-dropdown-badge-inactive {
+  @apply bg-brand-50 group-hover:bg-brand-100 dark:bg-brand-500/15 dark:group-hover:bg-brand-500/20;
+}
+
+@utility no-scrollbar {
+  /* Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    @apply size-1.5;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply rounded-full;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    @apply rounded-full;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: var(--border-hover);
+  }
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+}
+
+.dark .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: var(--border-hover);
+}
+
+@layer utilities {
+  /* For Remove Date Icon */
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="time"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+/* Table Checkbox */
+.tableCheckbox:checked ~ span span {
+  @apply opacity-100;
+}
+.tableCheckbox:checked ~ span {
+  @apply border-brand-500 bg-brand-500;
+}
+
+/* Form Check Input */
+.form-check-input:checked ~ span {
+  @apply border-[6px] border-brand-500 bg-brand-500 dark:border-brand-500;
+}
+
+.simplebar-scrollbar::before {
+  background-color: var(--border);
+  @apply !rounded-full !opacity-100;
+}
+
+.dark .simplebar-scrollbar::before {
+  background-color: var(--border);
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  @apply opacity-100;
+}
+
+/* ===== Semantic Utility Classes ===== */
+/* Backgrounds */
+.bg-app {
+  background-color: var(--background);
+}
+.bg-sidebar-bg {
+  background-color: var(--sidebar-bg);
+}
+.bg-surface {
+  background-color: var(--surface);
+}
+.bg-surface-hover {
+  background-color: var(--surface-hover);
+}
+.bg-surface-secondary {
+  background-color: var(--surface-secondary);
+}
+
+/* لو كنت محتاج bg-light ككلاس مستقل */
+.bg-light {
+  background-color: var(--background-light);
+}
+
+/* Borders */
+.border-app {
+  border-color: var(--border);
+}
+.border-hover {
+  border-color: var(--border-hover);
+}
+
+/* Text Colors */
+.tprimary {
+  color: var(--text-primary);
+}
+.tsecondary {
+  color: var(--text-secondary);
+}
+.ttertiary {
+  color: var(--text-tertiary);
+}
+.tdisabled {
+  color: var(--text-disabled);
+}
+.ton-brand {
+  color: var(--text-on-brand);
+}
+
+/* Icon Colors */
+.text-icon-primary {
+  color: var(--icon-primary);
+}
+.text-icon-secondary {
+  color: var(--icon-secondary);
+}
+.text-icon-tertiary {
+  color: var(--icon-tertiary);
+}
+
+/* Input/Form */
+.bg-input {
+  background-color: var(--input-bg);
+}
+.border-input {
+  border-color: var(--input-border);
+}
+.border-input-focus {
+  border-color: var(--input-focus-border);
+}
+.bg-input-disabled {
+  background-color: var(--input-disabled);
+}
+
+/* Primary Color Utilities */
+.bg-primary {
+  background-color: var(--primary-main);
+}
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+.bg-primary-dark {
+  background-color: var(--primary-dark);
+}
+.bg-primary-bg {
+  background-color: var(--primary-bg);
+}
+
+.text-primary {
+  color: var(--primary-main);
+}
+.text-primary-light {
+  color: var(--primary-light);
+}
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+.border-primary {
+  border-color: var(--primary-main);
+}
+.border-primary-light {
+  border-color: var(--primary-light);
+}
+.border-primary-dark {
+  border-color: var(--primary-dark);
+}
+
+/* Status Color Utilities */
+.text-success {
+  color: var(--success);
+}
+.text-warning {
+  color: var(--warning);
+}
+.text-error {
+  color: var(--error);
+}
+.text-info {
+  color: var(--info);
+}
+
+.bg-success {
+  background-color: var(--success);
+}
+.bg-warning {
+  background-color: var(--warning);
+}
+.bg-error {
+  background-color: var(--error);
+}
+.bg-info {
+  background-color: var(--info);
+}

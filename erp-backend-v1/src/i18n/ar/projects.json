@@ -1,0 +1,38 @@
+{
+  "create": {
+    "success": "تم إنشاء المشروع بنجاح",
+    "tenderNumberExists": "المشروع برقم العطاء {number} موجود بالفعل",
+    "invalidData": "بيانات المشروع غير صحيحة"
+  },
+  "update": {
+    "success": "تم تحديث المشروع بنجاح",
+    "notFound": "المشروع غير موجود",
+    "invalidData": "بيانات المشروع غير صحيحة"
+  },
+  "delete": {
+    "success": "تم حذف المشروع بنجاح",
+    "notFound": "المشروع غير موجود",
+    "hasDependencies": "لا يمكن حذف المشروع المرتبط بسجلات أخرى"
+  },
+  "get": {
+    "notFound": "المشروع بالمعرف {id} غير موجود",
+    "fetchError": "فشل في جلب بيانات المشروع"
+  },
+  "list": {
+    "fetchError": "فشل في جلب قائمة المشاريع"
+  },
+  "progress": {
+    "updateSuccess": "تم تحديث تقدم المشروع بنجاح",
+    "invalidProgress": "قيمة التقدم غير صحيحة (يجب أن تكون بين 0 و 100)"
+  },
+  "validation": {
+    "nameRequired": "اسم المشروع مطلوب",
+    "projectCodeRequired": "كود المشروع مطلوب",
+    "siteRequired": "الموقع مطلوب",
+    "startDateRequired": "تاريخ البداية مطلوب",
+    "endDateRequired": "تاريخ النهاية مطلوب",
+    "endDateInvalid": "تاريخ النهاية يجب أن يكون بعد تاريخ البداية",
+    "budgetInvalid": "الميزانية يجب أن تكون رقم موجب",
+    "progressInvalid": "التقدم يجب أن يكون بين 0 و 100"
+  }
+}

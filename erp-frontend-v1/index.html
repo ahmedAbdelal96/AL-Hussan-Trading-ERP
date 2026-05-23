@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/icon.png" />
+    <link rel="shortcut icon" href="/logo/icon.png" />
+    <link rel="apple-touch-icon" href="/logo/icon.png" />
+
+    <!-- SEO & Meta -->
+    <title>الحصان | نظام ERP لإدارة الموارد والتشغيل</title>
+    <meta
+      name="description"
+      content="منصة الحصان لإدارة موارد المؤسسة والتشغيل المالي والإداري عبر نظام ERP عملي يدعم متابعة الأعمال بكفاءة."
+    />
+    <meta name="application-name" content="نظام ERP - الحصان" />
+    <meta name="author" content="Alhussan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://alhussan.tech/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="الحصان | نظام ERP لإدارة الموارد والتشغيل" />
+    <meta
+      property="og:description"
+      content="منصة الحصان لإدارة موارد المؤسسة والتشغيل المالي والإداري عبر نظام ERP عملي يدعم متابعة الأعمال بكفاءة."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alhussan.tech/" />
+    <meta property="og:site_name" content="Alhussan" />
+    <meta property="og:image" content="https://alhussan.tech/logo/logo.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="الحصان | نظام ERP لإدارة الموارد والتشغيل" />
+    <meta
+      name="twitter:description"
+      content="منصة الحصان لإدارة موارد المؤسسة والتشغيل المالي والإداري عبر نظام ERP عملي يدعم متابعة الأعمال بكفاءة."
+    />
+    <meta name="twitter:image" content="https://alhussan.tech/logo/logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Alhussan",
+        "url": "https://alhussan.tech/"
+      }
+    </script>
+
+    <!-- Initialize language and direction before React loads -->
+    <script>
+      (function () {
+        try {
+          const stored = localStorage.getItem("language-store");
+          if (stored) {
+            const data = JSON.parse(stored);
+            const lang = data.state?.language || "en";
+            const dir = lang === "ar" ? "rtl" : "ltr";
+            document.documentElement.lang = lang;
+            document.documentElement.dir = dir;
+            document.documentElement.setAttribute("lang", lang);
+            document.documentElement.setAttribute("dir", dir);
+          }
+        } catch (e) {
+          console.error("Failed to initialize language:", e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

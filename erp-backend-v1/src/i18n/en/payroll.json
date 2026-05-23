@@ -1,0 +1,81 @@
+{
+  "loan": {
+    "notFound": "Employee loan with ID {id} not found",
+    "cannotApprove": "Cannot approve loan: current status is {status}. Only PENDING loans can be approved",
+    "cannotProcess": "Cannot process payment: loan status is {status}. Only ACTIVE loans can have installments paid",
+    "fullyPaid": "Loan is already fully paid",
+    "approveSuccess": "Loan approved successfully",
+    "rejectSuccess": "Loan rejected successfully",
+    "paymentSuccess": "Loan installment paid successfully",
+    "cannotReject": "Cannot reject loan: current status is {status}. Only PENDING loans can be rejected",
+    "cannotDelete": "Cannot delete loan with status {status}. Only PENDING or REJECTED loans can be deleted",
+    "deleteSuccess": "Loan deleted successfully",
+    "amountInvalid": "Loan amount must be greater than 0",
+    "installmentCountInvalid": "Installment count must be greater than 0"
+  },
+  "allowance": {
+    "typeExists": "Allowance type with name \"{name}\" already exists",
+    "typeNotFound": "Allowance type with ID {id} not found",
+    "typeNotActive": "Allowance type \"{name}\" is not active",
+    "amountInvalid": "Allowance amount must be greater than 0",
+    "alreadyProcessed": "Employee allowance has already been processed",
+    "alreadyApproved": "Employee allowance has already been approved",
+    "createSuccess": "Allowance created successfully",
+    "updateSuccess": "Allowance updated successfully",
+    "approveSuccess": "Allowance approved successfully",
+    "rejectSuccess": "Allowance rejected successfully",
+    "deleteSuccess": "Allowance deleted successfully",
+    "notFound": "Employee allowance with ID {id} not found",
+    "typeInUse": "Cannot delete allowance type: it is currently in use by {count} employee allowance(s)"
+  },
+  "deduction": {
+    "notFound": "Employee deduction with ID {id} not found",
+    "amountInvalid": "Deduction amount must be greater than 0",
+    "createSuccess": "Deduction created successfully",
+    "updateSuccess": "Deduction updated successfully",
+    "deleteSuccess": "Deduction deleted successfully",
+    "loanNotFound": "Loan with ID {id} not found",
+    "loanAlreadyDeducted": "Deduction for this loan already exists"
+  },
+  "salary": {
+    "notFound": "Salary structure with ID {id} not found",
+    "basicSalaryInvalid": "Basic salary must be greater than 0",
+    "installmentInvalid": "Installment count must be greater than 0",
+    "updateSuccess": "Salary structure updated successfully",
+    "validationError": "Total allowances and deductions validation failed",
+    "overlap": "Cannot save because another salary record exists",
+    "dateOrderInvalid": "Effective start date must be before end date",
+    "alreadyExists": "Employee already has a salary record",
+    "createSuccess": "Salary structure created successfully",
+    "deleteSuccess": "Salary structure deleted successfully",
+    "historyTitle": "Salary History",
+    "title": {
+      "current": "Current Salary",
+      "history": "Change History"
+    },
+    "descriptions": {
+      "current": "Latest salary record for the employee",
+      "history": "All salary changes for this employee"
+    },
+    "label": {
+      "amount": "Amount",
+      "lastUpdate": "Last Update"
+    }
+  },
+  "payroll": {
+    "noActiveEmployees": "No active employees found to process",
+    "invalidMonth": "Month must be between 1 and 12",
+    "invalidYear": "Year must be between 2000 and 2100",
+    "processSuccess": "Payroll processed successfully",
+    "payslipNotFound": "Payslip with ID {id} not found"
+  },
+  "validation": {
+    "employeeRequired": "Employee is required",
+    "amountRequired": "Amount is required",
+    "amountInvalid": "Amount must be a positive number",
+    "dateRequired": "Date is required",
+    "typeRequired": "Type is required",
+    "loanIdRequired": "Loan ID is required for LOAN_REPAYMENT deduction type",
+    "loanNotBelongsToEmployee": "Loan does not belong to the specified employee"
+  }
+}

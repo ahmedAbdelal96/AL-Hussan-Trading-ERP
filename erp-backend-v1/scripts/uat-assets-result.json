@@ -1,0 +1,41 @@
+﻿{
+    "startedAt":  "2026-03-11T19:03:16.4637650+02:00",
+    "finishedAt":  "2026-03-11T19:03:17.5612942+02:00",
+    "baseUrl":  "http://localhost:9000/api/v1",
+    "scenarios":  [
+                      "Create asset",
+                      "Update asset status with rowVersion",
+                      "Assign asset to project",
+                      "Assign employee to asset",
+                      "Create maintenance request",
+                      "Verify asset detail/history endpoints",
+                      "Verify reports delta (overview/by-status/utilization)"
+                  ],
+    "baseline":  {
+                     "totalAssets":  5,
+                     "inUseCount":  2,
+                     "operationalCount":  5,
+                     "underMaintenanceCount":  3
+                 },
+    "after":  {
+                  "totalAssets":  6,
+                  "inUseCount":  2,
+                  "operationalCount":  6,
+                  "underMaintenanceCount":  4
+              },
+    "entities":  {
+                     "finalRowVersion":  2,
+                     "employeeId":  "73abed57-b2e0-4666-8d7d-9ae25baa8c48",
+                     "maintenanceRequestId":  "be6830df-e8cf-4746-b879-e55d03273402",
+                     "assetId":  "8f43991d-4150-4edd-ae6a-ffc480b07a93",
+                     "projectId":  "7e057047-97e9-470b-b79a-b9ae66041b8c",
+                     "projectWasAutoCreated":  false
+                 },
+    "cleanup":  {
+                    "attempted":  true,
+                    "deleted":  true,
+                    "projectDeleted":  false,
+                    "error":  null
+                },
+    "status":  "PASS"
+}

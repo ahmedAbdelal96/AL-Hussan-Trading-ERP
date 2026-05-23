@@ -1,0 +1,462 @@
+/**
+ * 📋 TEMPLATE - Controller with Permissions
+ * 
+ * نسخ هذا الـ Template واستبدل:
+ * - {MODULE} بـ اسم الـ Module (مثل: site, project, asset)
+ * - {MODULE_CLASS} بـ اسم الـ Class (مثل: Site, Project, Asset)
+ * 
+ * الأنماط المتاحة:
+ * 1. Standard Module (3 صلاحيات): read, write, delete
+ * 2. Sensitive Module (4-6 صلاحيات): read, write, delete, approve, process, export
+ */
+
+import { 
+  Controller, 
+  Get, 
+  Post, 
+  Put, 
+  Delete, 
+  Param, 
+  Body, 
+  Query 
+} from '@nestjs/common';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
+import { Auth } from '../../auth/decorators';
+
+// ============================================================
+// PATTERN 1: STANDARD MODULE (Employee, Site, Project, Asset)
+// ============================================================
+
+@ApiTags('{module}s')
+@Controller('{module}s')
+export class {MODULE_CLASS}sController {
+  
+  /**
+   * GET /{module}s
+   * صلاحية: {module}:read
+   * الأدوار: SUPERADMIN, ADMIN, MANAGER, STAFF
+   */
+  @Get()
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'OPS_MANAGER', 'OPS_STAFF'], 
+    permissions: ['{module}:read'] 
+  })
+  @ApiOperation({ summary: 'Get all {module}s' })
+  async findAll(@Query() query: any) {
+    // ...implementation
+  }
+  
+  /**
+   * GET /{module}s/:id
+   * صلاحية: {module}:read
+   */
+  @Get(':id')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'OPS_MANAGER', 'OPS_STAFF'], 
+    permissions: ['{module}:read'] 
+  })
+  @ApiOperation({ summary: 'Get {module} by ID' })
+  async findOne(@Param('id') id: string) {
+    // ...implementation
+  }
+  
+  /**
+   * POST /{module}s
+   * صلاحية: {module}:write
+   * الأدوار: SUPERADMIN, ADMIN, MANAGER فقط
+   */
+  @Post()
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'OPS_MANAGER'], 
+    permissions: ['{module}:write'] 
+  })
+  @ApiOperation({ summary: 'Create {module}' })
+  async create(@Body() dto: any) {
+    // ...implementation
+  }
+  
+  /**
+   * PUT /{module}s/:id
+   * صلاحية: {module}:write
+   */
+  @Put(':id')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'OPS_MANAGER'], 
+    permissions: ['{module}:write'] 
+  })
+  @ApiOperation({ summary: 'Update {module}' })
+  async update(@Param('id') id: string, @Body() dto: any) {
+    // ...implementation
+  }
+  
+  /**
+   * DELETE /{module}s/:id
+   * صلاحية: {module}:delete
+   * الأدوار: SUPERADMIN, ADMIN فقط
+   */
+  @Delete(':id')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN'], 
+    permissions: ['{module}:delete'] 
+  })
+  @ApiOperation({ summary: 'Delete {module}' })
+  async remove(@Param('id') id: string) {
+    // ...implementation
+  }
+}
+
+
+// ============================================================
+// PATTERN 2: SENSITIVE MODULE - PAYROLL (4 صلاحيات)
+// ============================================================
+
+@ApiTags('payroll')
+@Controller('payroll')
+export class PayrollController {
+  
+  /**
+   * GET /payroll
+   * صلاحية: payroll:read
+   * الأدوار: SUPERADMIN, ADMIN, HR_MANAGER, FIN_MANAGER
+   */
+  @Get()
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'HR_MANAGER', 'FIN_MANAGER'], 
+    permissions: ['payroll:read'] 
+  })
+  @ApiOperation({ summary: 'Get all payroll records' })
+  async findAll() {
+    // ...implementation
+  }
+  
+  /**
+   * POST /payroll
+   * صلاحية: payroll:write
+   * الأدوار: SUPERADMIN, ADMIN, HR_MANAGER
+   */
+  @Post()
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'HR_MANAGER'], 
+    permissions: ['payroll:write'] 
+  })
+  @ApiOperation({ summary: 'Create payroll record' })
+  async create(@Body() dto: any) {
+    // ...implementation
+  }
+  
+  /**
+   * POST /payroll/:id/process
+   * صلاحية: payroll:process
+   * الأدوار: SUPERADMIN, ADMIN, HR_MANAGER فقط
+   */
+  @Post(':id/process')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'HR_MANAGER'], 
+    permissions: ['payroll:process'] 
+  })
+  @ApiOperation({ summary: 'Process payroll' })
+  async process(@Param('id') id: string) {
+    // ...implementation
+  }
+  
+  /**
+   * POST /payroll/:id/approve
+   * صلاحية: payroll:approve
+   * الأدوار: SUPERADMIN, ADMIN فقط
+   */
+  @Post(':id/approve')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN'], 
+    permissions: ['payroll:approve'] 
+  })
+  @ApiOperation({ summary: 'Approve payroll' })
+  async approve(@Param('id') id: string) {
+    // ...implementation
+  }
+}
+
+
+// ============================================================
+// PATTERN 3: SENSITIVE MODULE - FINANCE (5 صلاحيات)
+// ============================================================
+
+@ApiTags('finance')
+@Controller('finance')
+export class FinanceController {
+  
+  /**
+   * GET /finance/invoices
+   * صلاحية: finance:read
+   */
+  @Get('invoices')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'FIN_MANAGER', 'FIN_STAFF'], 
+    permissions: ['finance:read'] 
+  })
+  @ApiOperation({ summary: 'Get invoices' })
+  async getInvoices() {
+    // ...implementation
+  }
+  
+  /**
+   * POST /finance/invoices
+   * صلاحية: finance:write
+   */
+  @Post('invoices')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'FIN_MANAGER', 'FIN_STAFF'], 
+    permissions: ['finance:write'] 
+  })
+  @ApiOperation({ summary: 'Create invoice' })
+  async createInvoice(@Body() dto: any) {
+    // ...implementation
+  }
+  
+  /**
+   * POST /finance/invoices/:id/approve
+   * صلاحية: finance:approve
+   * الأدوار: SUPERADMIN, ADMIN, FIN_MANAGER فقط
+   */
+  @Post('invoices/:id/approve')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'FIN_MANAGER'], 
+    permissions: ['finance:approve'] 
+  })
+  @ApiOperation({ summary: 'Approve invoice' })
+  async approveInvoice(@Param('id') id: string) {
+    // ...implementation
+  }
+  
+  /**
+   * GET /finance/export
+   * صلاحية: finance:export
+   * الأدوار: SUPERADMIN, ADMIN, FIN_MANAGER فقط
+   */
+  @Get('export')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'FIN_MANAGER'], 
+    permissions: ['finance:export'] 
+  })
+  @ApiOperation({ summary: 'Export financial data' })
+  async exportData(@Query() query: any) {
+    // ...implementation
+  }
+  
+  /**
+   * DELETE /finance/invoices/:id
+   * صلاحية: finance:delete
+   * الأدوار: SUPERADMIN, ADMIN فقط
+   */
+  @Delete('invoices/:id')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN'], 
+    permissions: ['finance:delete'] 
+  })
+  @ApiOperation({ summary: 'Delete invoice' })
+  async deleteInvoice(@Param('id') id: string) {
+    // ...implementation
+  }
+}
+
+
+// ============================================================
+// PATTERN 4: CRITICAL MODULE - USER (5 صلاحيات)
+// ============================================================
+
+@ApiTags('users')
+@Controller('users')
+export class UsersController {
+  
+  /**
+   * GET /users
+   * صلاحية: user:read
+   */
+  @Get()
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'HR_MANAGER'], 
+    permissions: ['user:read'] 
+  })
+  @ApiOperation({ summary: 'Get all users' })
+  async findAll() {
+    // ...implementation
+  }
+  
+  /**
+   * POST /users
+   * صلاحية: user:write
+   */
+  @Post()
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN', 'HR_MANAGER'], 
+    permissions: ['user:write'] 
+  })
+  @ApiOperation({ summary: 'Create user' })
+  async create(@Body() dto: any) {
+    // ...implementation
+  }
+  
+  /**
+   * PUT /users/:id/role
+   * صلاحية: user:change_role
+   * الأدوار: SUPERADMIN, ADMIN فقط
+   */
+  @Put(':id/role')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN'], 
+    permissions: ['user:change_role'] 
+  })
+  @ApiOperation({ summary: 'Change user role' })
+  async changeRole(@Param('id') id: string, @Body() dto: any) {
+    // ...implementation
+  }
+  
+  /**
+   * POST /users/:id/reset-password
+   * صلاحية: user:reset_password
+   * الأدوار: SUPERADMIN, ADMIN فقط
+   */
+  @Post(':id/reset-password')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN'], 
+    permissions: ['user:reset_password'] 
+  })
+  @ApiOperation({ summary: 'Reset user password' })
+  async resetPassword(@Param('id') id: string) {
+    // ...implementation
+  }
+  
+  /**
+   * DELETE /users/:id
+   * صلاحية: user:delete
+   * الأدوار: SUPERADMIN فقط
+   */
+  @Delete(':id')
+  @Auth({ 
+    roles: ['SUPERADMIN'], 
+    permissions: ['user:delete'] 
+  })
+  @ApiOperation({ summary: 'Delete user (SUPERADMIN only)' })
+  async remove(@Param('id') id: string) {
+    // ...implementation
+  }
+}
+
+
+// ============================================================
+// PATTERN 5: CRITICAL MODULE - RBAC (2 صلاحيات)
+// ============================================================
+
+@ApiTags('rbac')
+@Controller('rbac')
+export class RbacController {
+  
+  /**
+   * GET /rbac/roles
+   * صلاحية: rbac:read
+   */
+  @Get('roles')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN'], 
+    permissions: ['rbac:read'] 
+  })
+  @ApiOperation({ summary: 'Get roles' })
+  async getRoles() {
+    // ...implementation
+  }
+  
+  /**
+   * GET /rbac/permissions
+   * صلاحية: rbac:read
+   */
+  @Get('permissions')
+  @Auth({ 
+    roles: ['SUPERADMIN', 'ADMIN'], 
+    permissions: ['rbac:read'] 
+  })
+  @ApiOperation({ summary: 'Get permissions' })
+  async getPermissions() {
+    // ...implementation
+  }
+  
+  /**
+   * POST /rbac/roles
+   * صلاحية: rbac:write
+   * الأدوار: SUPERADMIN فقط
+   */
+  @Post('roles')
+  @Auth({ 
+    roles: ['SUPERADMIN'], 
+    permissions: ['rbac:write'] 
+  })
+  @ApiOperation({ summary: 'Create role (SUPERADMIN only)' })
+  async createRole(@Body() dto: any) {
+    // ...implementation
+  }
+  
+  /**
+   * POST /rbac/assign
+   * صلاحية: rbac:write
+   * الأدوار: SUPERADMIN فقط
+   */
+  @Post('assign')
+  @Auth({ 
+    roles: ['SUPERADMIN'], 
+    permissions: ['rbac:write'] 
+  })
+  @ApiOperation({ summary: 'Assign permission to role (SUPERADMIN only)' })
+  async assignPermission(@Body() dto: any) {
+    // ...implementation
+  }
+}
+
+
+// ============================================================
+// ملاحظات هامة:
+// ============================================================
+
+/**
+ * 1. لا تنسى تحديث app.module.ts:
+ * 
+ * import { {MODULE_CLASS}sController } from './modules/{module}s/controllers/{module}s.controller';
+ * 
+ * @Module({
+ *   controllers: [{MODULE_CLASS}sController],
+ * })
+ * 
+ * 
+ * 2. دليل الأدوار:
+ * 
+ * - SUPERADMIN: كل شيء
+ * - ADMIN: كل شيء تقريباً
+ * - HR_MANAGER: موارد بشرية + رواتب
+ * - HR_STAFF: موارد بشرية فقط (قراءة + كتابة)
+ * - FIN_MANAGER: مالية + معاملات
+ * - FIN_STAFF: مالية فقط (قراءة + كتابة)
+ * - OPS_MANAGER: عمليات + مشاريع
+ * - OPS_STAFF: عمليات فقط (قراءة + كتابة)
+ * - USER: القراءة الأساسية فقط
+ * 
+ * 
+ * 3. منطق الصلاحيات (OR Logic):
+ * 
+ * يحتاج المستخدم إلى:
+ * (ANY role) OR (ALL permissions)
+ * 
+ * أمثلة:
+ * - إذا كان ADMIN → ينجح تلقائياً
+ * - إذا لم يكن ADMIN ولكن لديه employee:read → ينجح
+ * - إذا لم يكن لديه Role ولا Permission → يفشل
+ * 
+ * 
+ * 4. Best Practices:
+ * 
+ * ✅ استخدم Hybrid Approach (3 صلاحيات للـ Standard، 4-6 للـ Sensitive)
+ * ✅ اجعل SUPERADMIN دائماً في القائمة
+ * ✅ استخدم صلاحيات واضحة (read, write, delete, approve...)
+ * ✅ أضف ApiOperation للتوثيق
+ * ✅ استخدم naming conventions (module:action)
+ * 
+ * ❌ لا تستخدم صلاحيات غير موجودة في permissions.constants.ts
+ * ❌ لا تستخدم AND Logic (كل الأدوار + كل الصلاحيات)
+ * ❌ لا تنسى تحديث Swagger
+ */

@@ -1,0 +1,40 @@
+# Root-only docs / notes that should not go to the new GitHub repo
+/*.md
+/*.txt
+/*.js
+/*.ps1
+/*.log
+/*.tmp
+
+# Keep example env files, ignore real secrets everywhere
+**/.env
+**/.env.*
+!**/.env*.example
+
+# Local agent / editor artifacts
+/.claude/
+/.vscode/
+/.idea/
+/.history/
+/.DS_Store
+
+# Build output and dependencies
+**/node_modules/
+**/dist/
+**/coverage/
+**/logs/
+**/uploads/
+**/test-results/
+**/scripts/**/results/
+**/.cache/
+**/tmpclaude-*
+**/tmp-*
+**/.tmp*
+**/vite.config.d.ts
+**/tsconfig.tsbuildinfo
+
+# Nested git metadata from the old split repos
+erp-backend-v1/.git/
+erp-frontend-v1/.git/
+
+release-artifacts/

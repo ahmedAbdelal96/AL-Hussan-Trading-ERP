@@ -1,0 +1,82 @@
+{
+  "loan": {
+    "notFound": "قرض الموظف غير موجود ({id})",
+    "cannotApprove": "لا يمكن الموافقة على القرض الآن. الحالة الحالية: {status}",
+    "cannotProcess": "لا يمكن دفع القسط الآن. حالة القرض: {status}",
+    "fullyPaid": "القرض مسدد بالكامل",
+    "approveSuccess": "تمت الموافقة على القرض",
+    "rejectSuccess": "تم رفض القرض",
+    "paymentSuccess": "تم دفع القسط بنجاح",
+    "cannotReject": "لا يمكن رفض القرض الآن. الحالة الحالية: {status}",
+    "cannotDelete": "لا يمكن حذف القرض الآن. الحالة الحالية: {status}",
+    "deleteSuccess": "تم حذف القرض",
+    "amountInvalid": "مبلغ القرض يجب أن يكون أكبر من 0",
+    "installmentCountInvalid": "عدد الأقساط يجب أن يكون أكبر من 0"
+  },
+  "allowance": {
+    "typeExists": "اسم البدل \"{name}\" موجود بالفعل",
+    "typeNotFound": "نوع البدل غير موجود ({id})",
+    "typeNotActive": "نوع البدل \"{name}\" غير نشط",
+    "amountInvalid": "مبلغ البدل يجب أن يكون أكبر من 0",
+    "alreadyProcessed": "تمت معالجة بدل الموظف بالفعل",
+    "alreadyApproved": "تمت الموافقة على بدل الموظف بالفعل",
+    "createSuccess": "تم إنشاء البدل",
+    "updateSuccess": "تم تحديث البدل",
+    "approveSuccess": "تمت الموافقة على البدل",
+    "rejectSuccess": "تم رفض البدل",
+    "deleteSuccess": "تم حذف البدل",
+    "notFound": "بدل الموظف غير موجود ({id})",
+    "typeInUse": "لا يمكن حذف نوع البدل لأنه مستخدم في {count} بدل موظف"
+  },
+  "deduction": {
+    "notFound": "خصم الموظف غير موجود ({id})",
+    "amountInvalid": "مبلغ الخصم يجب أن يكون أكبر من 0",
+    "createSuccess": "تم إنشاء الخصم",
+    "updateSuccess": "تم تحديث الخصم",
+    "deleteSuccess": "تم حذف الخصم",
+    "loanNotFound": "القرض غير موجود ({id})",
+    "loanAlreadyDeducted": "تم خصم هذا القرض من قبل"
+  },
+  "salary": {
+    "notFound": "راتب الموظف غير موجود ({id})",
+    "basicSalaryInvalid": "الراتب الأساسي يجب أن يكون أكبر من 0",
+    "installmentInvalid": "عدد الأقساط يجب أن يكون أكبر من 0",
+    "updateSuccess": "تم تحديث راتب الموظف",
+    "validationError": "هناك خطأ في مجموع البدلات والخصومات",
+    "overlap": "لا يمكن حفظ الراتب لأن هناك راتبًا آخر للموظف",
+    "dateOrderInvalid": "تاريخ البداية يجب أن يكون قبل تاريخ النهاية",
+    "alreadyExists": "الموظف لديه راتب مسجل بالفعل",
+    "unchanged": "الراتب لم يتغير",
+    "createSuccess": "تم إنشاء راتب الموظف",
+    "deleteSuccess": "تم حذف راتب الموظف",
+    "historyTitle": "تاريخ الراتب",
+    "title": {
+      "current": "الراتب الحالي",
+      "history": "سجل التغييرات"
+    },
+    "descriptions": {
+      "current": "آخر راتب مسجل للموظف",
+      "history": "جميع التغييرات التي طرأت على راتب الموظف"
+    },
+    "label": {
+      "amount": "المبلغ",
+      "lastUpdate": "آخر تحديث"
+    }
+  },
+  "payroll": {
+    "noActiveEmployees": "لا يوجد موظفون نشطون للمعالجة",
+    "invalidMonth": "الشهر غير صحيح (1 إلى 12)",
+    "invalidYear": "السنة غير صحيحة (2000 إلى 2100)",
+    "processSuccess": "تمت معالجة الرواتب",
+    "payslipNotFound": "كشف الراتب غير موجود ({id})"
+  },
+  "validation": {
+    "employeeRequired": "اختر الموظف",
+    "amountRequired": "أدخل المبلغ",
+    "amountInvalid": "المبلغ يجب أن يكون رقمًا موجبًا",
+    "dateRequired": "اختر التاريخ",
+    "typeRequired": "اختر النوع",
+    "loanIdRequired": "رقم القرض مطلوب لخصم سداد القرض",
+    "loanNotBelongsToEmployee": "هذا القرض ليس لنفس الموظف"
+  }
+}

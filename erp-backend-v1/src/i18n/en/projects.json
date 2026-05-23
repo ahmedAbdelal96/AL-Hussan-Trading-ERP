@@ -1,0 +1,38 @@
+{
+  "create": {
+    "success": "Project created successfully",
+    "tenderNumberExists": "Project with tender number {number} already exists",
+    "invalidData": "Invalid project data provided"
+  },
+  "update": {
+    "success": "Project updated successfully",
+    "notFound": "Project not found",
+    "invalidData": "Invalid project data provided"
+  },
+  "delete": {
+    "success": "Project deleted successfully",
+    "notFound": "Project not found",
+    "hasDependencies": "Cannot delete project with associated records"
+  },
+  "get": {
+    "notFound": "Project with ID {id} not found",
+    "fetchError": "Failed to fetch project data"
+  },
+  "list": {
+    "fetchError": "Failed to fetch projects list"
+  },
+  "progress": {
+    "updateSuccess": "Project progress updated successfully",
+    "invalidProgress": "Invalid progress value (must be between 0 and 100)"
+  },
+  "validation": {
+    "nameRequired": "Project name is required",
+    "projectCodeRequired": "Project code is required",
+    "siteRequired": "Site is required",
+    "startDateRequired": "Start date is required",
+    "endDateRequired": "End date is required",
+    "endDateInvalid": "End date must be after start date",
+    "budgetInvalid": "Budget must be a positive number",
+    "progressInvalid": "Progress must be between 0 and 100"
+  }
+}

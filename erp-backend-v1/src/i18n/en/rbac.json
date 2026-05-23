@@ -1,0 +1,108 @@
+{
+  "roles": {
+    "create": {
+      "success": "Role created successfully",
+      "slugExists": "Role with slug '{slug}' already exists",
+      "onlySuperadmin": "Only SUPERADMIN users can create roles",
+      "invalidPermissions": "Some permission IDs do not exist: {ids}"
+    },
+    "update": {
+      "success": "Role updated successfully",
+      "notFound": "Role with ID {id} not found",
+      "onlySuperadmin": "Only SUPERADMIN users can update roles",
+      "cannotUpdateSystemRole": "Cannot update system role '{name}'"
+    },
+    "delete": {
+      "success": "Role deleted successfully",
+      "notFound": "Role with ID {id} not found",
+      "onlySuperadmin": "Only SUPERADMIN users can delete roles",
+      "cannotDeleteSystemRole": "Cannot delete system role '{name}'",
+      "hasAssignedUsers": "Cannot delete role with assigned users"
+    },
+    "get": {
+      "notFound": "Role not found",
+      "fetchError": "Failed to fetch role data"
+    },
+    "assign": {
+      "success": "Role assigned successfully",
+      "onlySuperadmin": "Only SUPERADMIN users can assign roles",
+      "userNotFound": "User with ID {id} not found",
+      "roleNotFound": "Role with ID {id} not found",
+      "cannotAssignInactive": "Cannot assign inactive role '{name}'",
+      "alreadyAssigned": "User already has this role",
+      "invalidExpiration": "Expiration date must be in the future"
+    },
+    "revoke": {
+      "success": "Role revoked successfully",
+      "onlySuperadmin": "Only SUPERADMIN users can revoke roles",
+      "userNotFound": "User with ID {id} not found",
+      "roleNotFound": "Role with ID {id} not found",
+      "assignmentNotFound": "User does not have this role",
+      "cannotRevokePermanent": "Cannot revoke permanent role '{name}' from this user"
+    },
+    "permissions": {
+      "assignSuccess": "Permissions assigned to role successfully",
+      "onlySuperadmin": "Only SUPERADMIN users can assign permissions to roles",
+      "roleNotFound": "Role with ID {id} not found",
+      "invalidPermissions": "Some permission IDs do not exist: {ids}"
+    }
+  },
+  "permissions": {
+    "create": {
+      "success": "Permission created successfully",
+      "exists": "Permission '{permission}' already exists",
+      "onlySuperadmin": "Only SUPERADMIN users can create permissions"
+    },
+    "update": {
+      "success": "Permission updated successfully",
+      "notFound": "Permission not found",
+      "onlySuperadmin": "Only SUPERADMIN users can update permissions"
+    },
+    "delete": {
+      "success": "Permission deleted successfully",
+      "notFound": "Permission not found",
+      "onlySuperadmin": "Only SUPERADMIN users can delete permissions",
+      "hasAssignments": "Cannot delete permission with existing assignments"
+    },
+    "get": {
+      "notFound": "Permission not found",
+      "fetchError": "Failed to fetch permission data"
+    },
+    "grant": {
+      "success": "Permission granted to user successfully",
+      "onlySuperadmin": "Only SUPERADMIN users can grant permissions",
+      "userNotFound": "User with ID {id} not found",
+      "permissionNotFound": "Permission with ID {id} not found",
+      "alreadyGranted": "User already has this permission"
+    },
+    "revoke": {
+      "success": "Permission revoked from user successfully",
+      "onlySuperadmin": "Only SUPERADMIN users can revoke permissions",
+      "userNotFound": "User with ID {id} not found",
+      "permissionNotFound": "Permission with ID {id} not found",
+      "notGranted": "User does not have this permission"
+    },
+    "bulk": {
+      "createSuccess": "{count} permission(s) created successfully",
+      "createPartial": "{success} permission(s) created, {failed} failed",
+      "createError": "Failed to create permissions"
+    }
+  },
+  "validation": {
+    "roleNameRequired": "Role name is required",
+    "roleSlugRequired": "Role slug is required",
+    "permissionResourceRequired": "Permission resource is required",
+    "permissionActionRequired": "Permission action is required",
+    "userIdRequired": "User ID is required",
+    "roleIdRequired": "Role ID is required",
+    "permissionIdRequired": "Permission ID is required"
+  },
+  "authorization": {
+    "userNotAuthenticated": "User not authenticated",
+    "accessDenied": "Access denied",
+    "missingPermissions": "Access denied. Missing permissions: {permissions}",
+    "requiredRoles": "Access denied. Required roles: {roles}",
+    "requiredRolesOrPermissions": "Access denied. Required: {required}. Missing permissions: {permissions}",
+    "requiredRolesWithUserRoles": "Access denied. Required roles: {requiredRoles}. User roles: {userRoles}"
+  }
+}

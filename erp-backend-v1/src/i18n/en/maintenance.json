@@ -1,0 +1,18 @@
+{
+  "request": {
+    "createSuccess": "Maintenance request created successfully",
+    "updateSuccess": "Maintenance request updated successfully",
+    "notFound": "Maintenance request not found",
+    "assetNotFound": "Asset not found"
+  },
+  "schedule": {
+    "createSuccess": "Maintenance scheduled successfully",
+    "updateSuccess": "Maintenance schedule updated successfully"
+  },
+  "validation": {
+    "assetRequired": "Asset is required",
+    "typeRequired": "Maintenance type is required",
+    "dateRequired": "Date is required",
+    "descriptionRequired": "Description is required"
+  }
+}

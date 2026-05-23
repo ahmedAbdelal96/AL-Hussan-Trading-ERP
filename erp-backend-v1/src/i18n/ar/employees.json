@@ -1,0 +1,48 @@
+{
+  "create": {
+    "success": "تم إنشاء الموظف بنجاح",
+    "nationalIdExists": "الرقم القومي موجود بالفعل",
+    "emailExists": "البريد الإلكتروني موجود بالفعل",
+    "invalidData": "بيانات الموظف غير صحيحة"
+  },
+  "update": {
+    "success": "تم تحديث الموظف بنجاح",
+    "notFound": "الموظف غير موجود",
+    "nationalIdExists": "الرقم القومي موجود بالفعل",
+    "emailExists": "البريد الإلكتروني موجود بالفعل",
+    "invalidData": "بيانات الموظف غير صحيحة"
+  },
+  "delete": {
+    "success": "تم حذف الموظف بنجاح",
+    "notFound": "الموظف غير موجود",
+    "hasDependencies": "لا يمكن حذف الموظف المرتبط بسجلات أخرى"
+  },
+  "get": {
+    "notFound": "الموظف غير موجود",
+    "fetchError": "فشل في جلب بيانات الموظف"
+  },
+  "list": {
+    "fetchError": "فشل في جلب قائمة الموظفين"
+  },
+  "bulk": {
+    "createSuccess": "تم إنشاء {count} موظف بنجاح",
+    "createPartial": "تم إنشاء {success} موظف، فشل {failed}",
+    "createError": "فشل في إنشاء الموظفين",
+    "duplicateNationalIds": "أرقام قومية مكررة في الدفعة: {ids}",
+    "duplicateEmails": "بريد إلكتروني مكرر في الدفعة: {emails}",
+    "nationalIdExists": "الرقم القومي موجود بالفعل: {id}",
+    "emailExists": "البريد الإلكتروني موجود بالفعل: {email}"
+  },
+  "validation": {
+    "firstNameRequired": "الاسم الأول مطلوب",
+    "lastNameRequired": "اسم العائلة مطلوب",
+    "nationalIdRequired": "الرقم القومي مطلوب",
+    "nationalIdInvalid": "صيغة الرقم القومي غير صحيحة",
+    "emailInvalid": "صيغة البريد الإلكتروني غير صحيحة",
+    "phoneInvalid": "صيغة رقم الهاتف غير صحيحة",
+    "hireDateRequired": "تاريخ التعيين مطلوب",
+    "birthDateInvalid": "تاريخ الميلاد غير صحيح",
+    "positionRequired": "المسمى الوظيفي مطلوب",
+    "departmentRequired": "القسم مطلوب"
+  }
+}

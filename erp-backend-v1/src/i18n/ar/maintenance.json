@@ -1,0 +1,18 @@
+{
+  "request": {
+    "createSuccess": "تم إنشاء طلب الصيانة بنجاح",
+    "updateSuccess": "تم تحديث طلب الصيانة بنجاح",
+    "notFound": "طلب الصيانة غير موجود",
+    "assetNotFound": "الأصل غير موجود"
+  },
+  "schedule": {
+    "createSuccess": "تم جدولة الصيانة بنجاح",
+    "updateSuccess": "تم تحديث جدول الصيانة بنجاح"
+  },
+  "validation": {
+    "assetRequired": "الأصل مطلوب",
+    "typeRequired": "نوع الصيانة مطلوب",
+    "dateRequired": "التاريخ مطلوب",
+    "descriptionRequired": "الوصف مطلوب"
+  }
+}

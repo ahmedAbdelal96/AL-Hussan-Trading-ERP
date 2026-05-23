@@ -1,0 +1,109 @@
+﻿{
+    "employees":  [
+                      {
+                          "id":  "9bcc831c-2b53-40e6-86a3-0e989b482079",
+                          "employeeNumber":  "EMP-00003",
+                          "firstName":  "UAT",
+                          "lastName":  "LoanThird"
+                      },
+                      {
+                          "id":  "45f7c98d-a881-4adf-ad08-66a14758104e",
+                          "employeeNumber":  "EMP-00002",
+                          "firstName":  "محمد",
+                          "lastName":  "احمد"
+                      },
+                      {
+                          "id":  "6ef387ca-01bf-449c-8ca8-a5bf783f13a9",
+                          "employeeNumber":  "EMP-00001",
+                          "firstName":  "محم\\د",
+                          "lastName":  "احمد"
+                      }
+                  ],
+    "loans":  [
+                  {
+                      "employeeId":  "9bcc831c-2b53-40e6-86a3-0e989b482079",
+                      "employeeNumber":  "EMP-00003",
+                      "loanId":  "c5d40672-92df-4580-88cd-9636b9739f2a",
+                      "amount":  12000,
+                      "installmentAmount":  1000,
+                      "installments":  12,
+                      "paidInstallmentsBefore":  0,
+                      "rowVersion":  2
+                  },
+                  {
+                      "employeeId":  "45f7c98d-a881-4adf-ad08-66a14758104e",
+                      "employeeNumber":  "EMP-00002",
+                      "loanId":  "4f1d7016-9daf-489d-a132-9fd97c6fac4b",
+                      "amount":  6000,
+                      "installmentAmount":  1000,
+                      "installments":  6,
+                      "paidInstallmentsBefore":  0,
+                      "rowVersion":  2
+                  },
+                  {
+                      "employeeId":  "6ef387ca-01bf-449c-8ca8-a5bf783f13a9",
+                      "employeeNumber":  "EMP-00001",
+                      "loanId":  "a23ef0ca-75f2-4a1e-a230-32f6b6420769",
+                      "amount":  24000,
+                      "installmentAmount":  2000,
+                      "installments":  12,
+                      "paidInstallmentsBefore":  0,
+                      "rowVersion":  2
+                  }
+              ],
+    "manualPayments":  [
+                           {
+                               "loanId":  "c5d40672-92df-4580-88cd-9636b9739f2a",
+                               "paidInstallmentsAfter":  1,
+                               "remainingAmount":  11000,
+                               "status":  "APPROVED",
+                               "rowVersion":  3
+                           },
+                           {
+                               "loanId":  "4f1d7016-9daf-489d-a132-9fd97c6fac4b",
+                               "paidInstallmentsAfter":  1,
+                               "remainingAmount":  5000,
+                               "status":  "APPROVED",
+                               "rowVersion":  3
+                           },
+                           {
+                               "loanId":  "a23ef0ca-75f2-4a1e-a230-32f6b6420769",
+                               "paidInstallmentsAfter":  1,
+                               "remainingAmount":  22000,
+                               "status":  "APPROVED",
+                               "rowVersion":  3
+                           }
+                       ],
+    "acceleratedAttempt":  {
+                               "allowed":  false,
+                               "message":  "The remote server returned an error: (400) Bad Request."
+                           },
+    "payrollProcess":  {
+                           "totalProcessed":  3,
+                           "successful":  2,
+                           "failed":  1,
+                           "totalGrossSalary":  16000,
+                           "totalDeductions":  2000,
+                           "totalNetSalary":  14000
+                       },
+    "deductionEvidence":  [
+                              {
+                                  "loanId":  "c5d40672-92df-4580-88cd-9636b9739f2a",
+                                  "totalApprovedRepaymentRows":  1,
+                                  "march2026RepaymentRows":  1,
+                                  "sources":  "MANUAL"
+                              },
+                              {
+                                  "loanId":  "4f1d7016-9daf-489d-a132-9fd97c6fac4b",
+                                  "totalApprovedRepaymentRows":  1,
+                                  "march2026RepaymentRows":  1,
+                                  "sources":  "MANUAL"
+                              },
+                              {
+                                  "loanId":  "a23ef0ca-75f2-4a1e-a230-32f6b6420769",
+                                  "totalApprovedRepaymentRows":  1,
+                                  "march2026RepaymentRows":  1,
+                                  "sources":  "MANUAL"
+                              }
+                          ]
+}

@@ -1,0 +1,43 @@
+{
+  "create": {
+    "success": "تم إنشاء الموقع بنجاح",
+    "codeExists": "كود الموقع موجود بالفعل",
+    "invalidData": "بيانات الموقع غير صحيحة"
+  },
+  "update": {
+    "success": "تم تحديث الموقع بنجاح",
+    "notFound": "الموقع غير موجود",
+    "codeExists": "كود الموقع موجود بالفعل",
+    "invalidData": "بيانات الموقع غير صحيحة"
+  },
+  "delete": {
+    "success": "تم حذف الموقع بنجاح",
+    "notFound": "الموقع غير موجود",
+    "hasDependencies": "لا يمكن حذف الموقع المرتبط بسجلات أخرى"
+  },
+  "restore": {
+    "notDeleted": "الموقع \"{name}\" ليس محذوفًا"
+  },
+  "get": {
+    "notFound": "الموقع غير موجود",
+    "fetchError": "فشل في جلب بيانات الموقع"
+  },
+  "list": {
+    "fetchError": "فشل في جلب قائمة المواقع"
+  },
+  "bulk": {
+    "createSuccess": "تم إنشاء {count} موقع بنجاح",
+    "createPartial": "تم إنشاء {success} موقع، وفشل {failed}",
+    "createError": "فشل في إنشاء المواقع",
+    "duplicateCodes": "أكواد مواقع مكررة في الدفعة: {codes}",
+    "codeExists": "كود الموقع موجود بالفعل: {code}"
+  },
+  "validation": {
+    "nameRequired": "اسم الموقع مطلوب",
+    "codeRequired": "كود الموقع مطلوب",
+    "codeInvalid": "صيغة كود الموقع غير صحيحة",
+    "locationRequired": "الموقع مطلوب",
+    "addressRequired": "العنوان مطلوب",
+    "typeRequired": "نوع الموقع مطلوب"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "roles": {
+    "create": {
+      "success": "تم إنشاء الدور بنجاح",
+      "slugExists": "الدور بالمعرف '{slug}' موجود بالفعل",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم إنشاء الأدوار",
+      "invalidPermissions": "بعض معرفات الصلاحيات غير موجودة: {ids}"
+    },
+    "update": {
+      "success": "تم تحديث الدور بنجاح",
+      "notFound": "الدور بالمعرف {id} غير موجود",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم تحديث الأدوار",
+      "cannotUpdateSystemRole": "لا يمكن تحديث دور النظام '{name}'"
+    },
+    "delete": {
+      "success": "تم حذف الدور بنجاح",
+      "notFound": "الدور بالمعرف {id} غير موجود",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم حذف الأدوار",
+      "cannotDeleteSystemRole": "لا يمكن حذف دور النظام '{name}'",
+      "hasAssignedUsers": "لا يمكن حذف الدور المعين لمستخدمين"
+    },
+    "get": {
+      "notFound": "الدور غير موجود",
+      "fetchError": "فشل في جلب بيانات الدور"
+    },
+    "assign": {
+      "success": "تم تعيين الدور بنجاح",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم تعيين الأدوار",
+      "userNotFound": "المستخدم بالمعرف {id} غير موجود",
+      "roleNotFound": "الدور بالمعرف {id} غير موجود",
+      "cannotAssignInactive": "لا يمكن تعيين الدور غير النشط '{name}'",
+      "alreadyAssigned": "المستخدم لديه هذا الدور بالفعل",
+      "invalidExpiration": "يجب أن يكون تاريخ الانتهاء في المستقبل"
+    },
+    "revoke": {
+      "success": "تم إلغاء الدور بنجاح",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم إلغاء الأدوار",
+      "userNotFound": "المستخدم بالمعرف {id} غير موجود",
+      "roleNotFound": "الدور بالمعرف {id} غير موجود",
+      "assignmentNotFound": "المستخدم ليس لديه هذا الدور",
+      "cannotRevokePermanent": "لا يمكن إلغاء الدور الدائم '{name}' من هذا المستخدم"
+    },
+    "permissions": {
+      "assignSuccess": "تم تعيين الصلاحيات للدور بنجاح",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم تعيين الصلاحيات للأدوار",
+      "roleNotFound": "الدور بالمعرف {id} غير موجود",
+      "invalidPermissions": "بعض معرفات الصلاحيات غير موجودة: {ids}"
+    }
+  },
+  "permissions": {
+    "create": {
+      "success": "تم إنشاء الصلاحية بنجاح",
+      "exists": "الصلاحية '{permission}' موجودة بالفعل",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم إنشاء الصلاحيات"
+    },
+    "update": {
+      "success": "تم تحديث الصلاحية بنجاح",
+      "notFound": "الصلاحية غير موجودة",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم تحديث الصلاحيات"
+    },
+    "delete": {
+      "success": "تم حذف الصلاحية بنجاح",
+      "notFound": "الصلاحية غير موجودة",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم حذف الصلاحيات",
+      "hasAssignments": "لا يمكن حذف الصلاحية المعينة"
+    },
+    "get": {
+      "notFound": "الصلاحية غير موجودة",
+      "fetchError": "فشل في جلب بيانات الصلاحية"
+    },
+    "grant": {
+      "success": "تم منح الصلاحية للمستخدم بنجاح",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم منح الصلاحيات",
+      "userNotFound": "المستخدم بالمعرف {id} غير موجود",
+      "permissionNotFound": "الصلاحية بالمعرف {id} غير موجودة",
+      "alreadyGranted": "المستخدم لديه هذه الصلاحية بالفعل"
+    },
+    "revoke": {
+      "success": "تم إلغاء الصلاحية من المستخدم بنجاح",
+      "onlySuperadmin": "فقط مستخدمو SUPERADMIN يمكنهم إلغاء الصلاحيات",
+      "userNotFound": "المستخدم بالمعرف {id} غير موجود",
+      "permissionNotFound": "الصلاحية بالمعرف {id} غير موجودة",
+      "notGranted": "المستخدم ليس لديه هذه الصلاحية"
+    },
+    "bulk": {
+      "createSuccess": "تم إنشاء {count} صلاحية بنجاح",
+      "createPartial": "تم إنشاء {success} صلاحية، وفشل {failed}",
+      "createError": "فشل في إنشاء الصلاحيات"
+    }
+  },
+  "validation": {
+    "roleNameRequired": "اسم الدور مطلوب",
+    "roleSlugRequired": "معرف الدور مطلوب",
+    "permissionResourceRequired": "مورد الصلاحية مطلوب",
+    "permissionActionRequired": "إجراء الصلاحية مطلوب",
+    "userIdRequired": "معرف المستخدم مطلوب",
+    "roleIdRequired": "معرف الدور مطلوب",
+    "permissionIdRequired": "معرف الصلاحية مطلوب"
+  },
+  "authorization": {
+    "userNotAuthenticated": "المستخدم غير مسجل الدخول",
+    "accessDenied": "تم رفض الوصول",
+    "missingPermissions": "تم رفض الوصول. الصلاحيات الناقصة: {permissions}",
+    "requiredRoles": "تم رفض الوصول. الأدوار المطلوبة: {roles}",
+    "requiredRolesOrPermissions": "تم رفض الوصول. المطلوب: {required}. الصلاحيات الناقصة: {permissions}",
+    "requiredRolesWithUserRoles": "تم رفض الوصول. الأدوار المطلوبة: {requiredRoles}. أدوار المستخدم: {userRoles}"
+  }
+}

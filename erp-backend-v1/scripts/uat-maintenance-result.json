@@ -1,0 +1,94 @@
+﻿{
+    "startedAt":  "2026-03-11T19:13:29.5278708+02:00",
+    "finishedAt":  "2026-03-11T19:13:34.2713194+02:00",
+    "baseUrl":  "http://localhost:9000/api/v1",
+    "scenario":  [
+                     "create asset for isolated maintenance test",
+                     "assign asset to project",
+                     "create maintenance request",
+                     "move status to IN_PROGRESS with rowVersion",
+                     "reject invalid completion allocation (sum != 100)",
+                     "complete maintenance with valid allocation",
+                     "validate maintenance statistics and cost-analysis deltas"
+                 ],
+    "entities":  {
+                     "maintenanceId":  "eafb23e0-2141-4ae7-8c8f-48e71fc7d716",
+                     "maintenanceNumber":  "MNT-0005",
+                     "assetId":  "a03e94c1-c3f5-40b0-b074-391b96d06518",
+                     "projectId":  "7e057047-97e9-470b-b79a-b9ae66041b8c"
+                 },
+    "baseline":  {
+                     "totalActualCost":  0,
+                     "completedRequests":  0
+                 },
+    "after":  {
+                  "totalActualCost":  2200,
+                  "completedRequests":  1
+              },
+    "checks":  {
+                   "negativeAllocationRejected":  true,
+                   "negativeAllocationMessage":  "The remote server returned an error: (400) Bad Request.",
+                   "statusFlow":  [
+                                      "PENDING",
+                                      "IN_PROGRESS",
+                                      "COMPLETED"
+                                  ]
+               },
+    "byStatusSnapshots":  {
+                              "before":  {
+                                             "totalRequests":  4,
+                                             "breakdown":  [
+                                                               {
+                                                                   "status":  "PENDING",
+                                                                   "count":  4,
+                                                                   "percentage":  100,
+                                                                   "totalCost":  0,
+                                                                   "averageDaysInStatus":  0,
+                                                                   "averageCompletionTime":  0
+                                                               }
+                                                           ],
+                                             "overallCompletionRate":  0,
+                                             "cancelledCount":  0,
+                                             "cancellationRate":  0,
+                                             "startDate":  "1970-01-01",
+                                             "endDate":  "2026-03-11"
+                                         },
+                              "after":  {
+                                            "totalRequests":  5,
+                                            "breakdown":  [
+                                                              {
+                                                                  "status":  "PENDING",
+                                                                  "count":  4,
+                                                                  "percentage":  80,
+                                                                  "totalCost":  0,
+                                                                  "averageDaysInStatus":  0,
+                                                                  "averageCompletionTime":  0
+                                                              },
+                                                              {
+                                                                  "status":  "COMPLETED",
+                                                                  "count":  1,
+                                                                  "percentage":  20,
+                                                                  "totalCost":  2200,
+                                                                  "averageDaysInStatus":  0,
+                                                                  "averageCompletionTime":  0
+                                                              }
+                                                          ],
+                                            "overallCompletionRate":  20,
+                                            "cancelledCount":  0,
+                                            "cancellationRate":  0,
+                                            "startDate":  "1970-01-01",
+                                            "endDate":  "2026-03-11"
+                                        }
+                          },
+    "cleanup":  {
+                    "attempted":  true,
+                    "maintenanceSoftCancelled":  true,
+                    "maintenanceHardDeleted":  true,
+                    "assetProjectReturned":  true,
+                    "assetDeleted":  true,
+                    "errors":  [
+
+                               ]
+                },
+    "pass":  true
+}
