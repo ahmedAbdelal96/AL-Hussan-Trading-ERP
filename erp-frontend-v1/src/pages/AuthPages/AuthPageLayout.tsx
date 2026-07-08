@@ -1,77 +1,33 @@
 import React from "react";
-import { Link } from "react-router";
 import { ThemeToggleButton } from "@/components/common/ThemeToggleButton";
 import { LanguageToggleButton } from "@/components/common/LanguageToggleButton";
-import { Building2, ShieldCheck, Activity } from "lucide-react";
-import { useTranslation } from "@/i18n/useTranslation";
 
 export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { t } = useTranslation();
-
   return (
-    <div className="relative z-1 min-h-screen bg-[var(--background)] p-4 sm:p-0">
-      <div className="relative flex min-h-screen w-full flex-col justify-center bg-[var(--background)] sm:p-0 lg:flex-row">
+    <div className="relative z-1 h-dvh w-full bg-slate-50 dark:bg-[#08111C] flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden transition-colors duration-300">
+      {/* Background ambient lighting effects & blueprint grid */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Blueprint Grid Lines */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(96,165,250,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(96,165,250,0.04)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-60 dark:opacity-40" />
+        
+        {/* Ambient radial glows */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-main/5 dark:bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+      </div>
+
+      {/* Main content shell */}
+      <div className="relative z-10 w-full flex flex-col items-center justify-center">
         {children}
-        <div className="relative hidden h-full w-full overflow-hidden border-l border-[var(--border)] bg-gradient-to-br from-[var(--surface)] via-[var(--surface-secondary)] to-[var(--background-sec)] lg:grid lg:w-1/2">
-          <div className="pointer-events-none absolute -top-20 -left-20 h-72 w-72 rounded-full bg-primary-main/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-primary-main/10 blur-3xl" />
+      </div>
 
-          <div className="relative z-10 flex h-full flex-col justify-between p-10">
-            <div className="max-w-xl">
-              <Link to="/" className="mb-8 inline-flex items-center gap-3">
-                <div className="rounded-md bg-primary-main/10 p-2.5">
-                  <Building2 className="h-6 w-6 text-primary-main" />
-                </div>
-                <img width={300} height={56} src="/logo/logo.png" alt="Logo" />
-              </Link>
-
-              <h1 className="mb-3 text-3xl font-semibold leading-tight text-[var(--text-primary)]">
-                {t("auth.login.enterprise.sideTitle")}
-              </h1>
-              <p className="max-w-lg text-base leading-7 text-[var(--text-secondary)]">
-                {t("auth.login.enterprise.sideDescription")}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
-              <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/80 p-4 backdrop-blur">
-                <ShieldCheck className="mb-2 h-5 w-5 text-primary-main" />
-                <p className="text-sm font-medium text-[var(--text-primary)]">
-                  {t("auth.login.enterprise.featureSecurityTitle")}
-                </p>
-                <p className="text-xs text-[var(--text-tertiary)]">
-                  {t("auth.login.enterprise.featureSecurityDesc")}
-                </p>
-              </div>
-              <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/80 p-4 backdrop-blur">
-                <Activity className="mb-2 h-5 w-5 text-primary-main" />
-                <p className="text-sm font-medium text-[var(--text-primary)]">
-                  {t("auth.login.enterprise.featureLiveDataTitle")}
-                </p>
-                <p className="text-xs text-[var(--text-tertiary)]">
-                  {t("auth.login.enterprise.featureLiveDataDesc")}
-                </p>
-              </div>
-              <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/80 p-4 backdrop-blur">
-                <Building2 className="mb-2 h-5 w-5 text-primary-main" />
-                <p className="text-sm font-medium text-[var(--text-primary)]">
-                  {t("auth.login.enterprise.featureEnterpriseTitle")}
-                </p>
-                <p className="text-xs text-[var(--text-tertiary)]">
-                  {t("auth.login.enterprise.featureEnterpriseDesc")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="fixed bottom-5 right-5 z-50 hidden gap-2 sm:flex">
-          <LanguageToggleButton />
-          <ThemeToggleButton />
-        </div>
+      {/* Floating controls positioned cleanly in the corner */}
+      <div className="fixed bottom-4 right-4 z-50 flex items-center gap-1.5 rounded-full border border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 p-1 shadow-md backdrop-blur-xs rtl:right-auto rtl:left-4 scale-90">
+        <LanguageToggleButton />
+        <div className="h-5 w-[1px] bg-slate-200 dark:bg-slate-800" />
+        <ThemeToggleButton />
       </div>
     </div>
   );

@@ -1,0 +1,21 @@
+{
+  "name": "erp-system",
+  "version": "1.0.0",
+  "description": "Enterprise ERP system for construction and trading operations, built with NestJS, Prisma, PostgreSQL, React, and Docker.",
+  "main": "audit-search.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedAbdelal96/AL-Hussan-Trading-ERP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ahmedAbdelal96/AL-Hussan-Trading-ERP/issues"
+  },
+  "homepage": "https://github.com/ahmedAbdelal96/AL-Hussan-Trading-ERP#readme"
+}

@@ -7,8 +7,8 @@ export const auth = {
   // ============= Login Page =============
   login: {
     title: "Welcome Back",
-    subtitle: "Sign in to access your dashboard",
-    email: "Email",
+    subtitle: "Sign in to access your account.",
+    email: "Email Address",
     emailPlaceholder: "admin@example.com",
     password: "Password",
     passwordPlaceholder: "Enter your password",
@@ -17,8 +17,14 @@ export const auth = {
     submit: "Sign In",
     noAccount: "Don't have an account?",
     createAccount: "Create account",
-
-    // Success and Error Messages
+    brandTitle: "Al-Hosan Contracting Company",
+    brandSubtitle: "Internal system for organizing company operations and daily work follow-up.",
+    badge: "Internal System Access",
+    secureAccess: "Secure access",
+    organizedFollowUp: "Organized follow-up",
+    roleAccess: "Role-based access",
+    help: "Need help signing in?",
+    backHome: "Back to Home",
     success: "Welcome {{name}}! Login successful",
     error: "Login failed. Please try again",
     invalidCredentials: "Invalid email or password",
@@ -46,19 +52,17 @@ export const auth = {
       step5: "Click 'Sign In' to access your dashboard",
     },
     enterprise: {
-      badge: "ERP Enterprise Access",
-      tagSecure: "Secure Login",
-      tagAudited: "Audit Tracked",
-      sideTitle: "ERP Platform for Operational Control",
-      sideDescription:
-        "Unified workflows for projects, payroll, finance, maintenance, and compliance in one secured enterprise workspace.",
-      featureSecurityTitle: "Role-secured Access",
-      featureSecurityDesc: "Policy-driven route and action-level protection.",
-      featureLiveDataTitle: "Live Operational Data",
-      featureLiveDataDesc: "Real-time updates across modules and reporting.",
-      featureEnterpriseTitle: "Enterprise Ready",
-      featureEnterpriseDesc:
-        "Built for scale, auditability, and governance.",
+      badge: "Internal System Access",
+      tagSecure: "Secure access",
+      tagAudited: "Role-based access",
+      sideTitle: "Al-Hosan Contracting Company",
+      sideDescription: "Internal system for organizing company operations and daily work follow-up.",
+      featureSecurityTitle: "Secure access",
+      featureSecurityDesc: "Encrypted credentials for authorized personnel.",
+      featureLiveDataTitle: "Organized follow-up",
+      featureLiveDataDesc: "Continuous tracking of site operations and metrics.",
+      featureEnterpriseTitle: "Role-based access",
+      featureEnterpriseDesc: "Clear permissions structured around job functions.",
     },
   },
 

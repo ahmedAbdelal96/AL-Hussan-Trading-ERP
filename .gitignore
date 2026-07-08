@@ -39,3 +39,10 @@ erp-backend-v1/.git/
 erp-frontend-v1/.git/
 
 release-artifacts/
+
+# Local tool folders
+.gemini/
+.antigravity/
+
+# Specific references
+Stitch/

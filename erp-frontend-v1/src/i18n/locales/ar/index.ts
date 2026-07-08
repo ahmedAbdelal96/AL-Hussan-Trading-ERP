@@ -14,8 +14,9 @@ import { maintenanceAr } from "./maintenance";
 import { financeAr } from "./finance";
 import reportsAr from "./reports";
 import { adminAr } from "./admin";
-
+import { publicAr } from "./public";
 export const ar = {
+  public: publicAr,
   common,
   sidebar,
   nav: {

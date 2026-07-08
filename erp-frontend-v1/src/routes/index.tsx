@@ -27,6 +27,12 @@ const DashboardPage = lazy(() => import("@/pages/dashboard/DashboardPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const ForbiddenPage = lazy(() => import("@/pages/errors/ForbiddenPage"));
 
+// Lazy load public pages
+const PublicLayout = lazy(() => import("@/components/layout/PublicLayout"));
+const LandingPage = lazy(() => import("@/pages/PublicPages/LandingPage"));
+const AboutPage = lazy(() => import("@/pages/PublicPages/AboutPage"));
+const ContactPage = lazy(() => import("@/pages/PublicPages/ContactPage"));
+
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-screen">
     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
@@ -37,6 +43,28 @@ const PageLoader = () => (
  * All Application Routes
  */
 export const appRoutes: RouteObject[] = [
+  // Public Marketing Routes
+  {
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <PublicLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
+      },
+    ],
+  },
   // Protected routes with Hierarchical structure
   {
     element: (
@@ -45,15 +73,6 @@ export const appRoutes: RouteObject[] = [
       </ProtectedRoute>
     ),
     children: [
-      {
-        index: true,
-        path: "/",
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <DashboardPage />
-          </Suspense>
-        ),
-      },
       {
         path: "/dashboard",
         element: (

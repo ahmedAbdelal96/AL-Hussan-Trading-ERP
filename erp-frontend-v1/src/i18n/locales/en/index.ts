@@ -14,8 +14,9 @@ import { maintenanceEn } from "./maintenance";
 import { financeEn } from "./finance";
 import reportsEn from "./reports";
 import { adminEn } from "./admin";
-
+import { publicEn } from "./public";
 export const en = {
+  public: publicEn,
   common,
   sidebar,
   nav: {

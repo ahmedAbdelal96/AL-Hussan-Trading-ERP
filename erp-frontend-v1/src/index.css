@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap");
 
 @import "tailwindcss";
@@ -1128,5 +1128,29 @@ html.dark .erp-kpi-item:is(button):hover {
     color: #000;
     background: #fff;
   }
+}
+
+/* Scoped Dark Mode Refinements for Public Site */
+html.dark .public-site {
+  --bg-app: #0B111A;
+  --surface-secondary: #0F1A26;
+  --bg-surface-secondary: #0F1A26;
+  --surface: #142333;
+  --bg-surface-primary: #142333;
+  --bg-surface-soft: #182A3D;
+  --border: rgba(148, 163, 184, 0.16);
+  --border-subtle: rgba(148, 163, 184, 0.12);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --primary-main: #3b82f6; /* Controlled blue accent */
+  --primary-bg: rgba(59, 130, 246, 0.15);
+}
+
+/* Base public-site class transitions */
+.public-site {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
