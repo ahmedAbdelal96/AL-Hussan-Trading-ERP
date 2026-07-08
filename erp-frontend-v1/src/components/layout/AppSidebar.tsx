@@ -1,4 +1,4 @@
-﻿import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Assume these icons are imported from an icon library
@@ -50,9 +50,7 @@ const operationsItems: NavItem[] = [
     icon: <GridIcon />,
     name: "Dashboard",
     nameKey: "dashboard",
-    subItems: [
-      { name: "Home Page", nameKey: "homePage", path: "/", pro: false },
-    ],
+    path: "/dashboard",
   },
 
   // ========== EMPLOYEES MODULE ==========
