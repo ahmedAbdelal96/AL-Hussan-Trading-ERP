@@ -4,8 +4,8 @@ const AppFooter: React.FC = () => {
   const { t } = useTranslation();
 
   // Personal branding values (edit as needed)
-  const designerName = "Ahmed abdelal";
-  const contactNumber = "+20 1032900752";
+  const designerName = "tech-for-software";
+  const contactNumber = "+966 55 773 3339";
   const whatsappNumber = contactNumber.replace(/\D/g, "");
   const platformName = t<string>("common.footer.platformName");
 

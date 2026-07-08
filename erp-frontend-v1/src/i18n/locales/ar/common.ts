@@ -1,4 +1,4 @@
-﻿export const common = {
+export const common = {
   // Actions
   save: "حفظ",
   saveChanges: "حفظ التغييرات",
@@ -250,8 +250,8 @@
   all: "الكل",
 
   footer: {
-    designedBy: "تصميم وتنفيذ: {{name}}",
-    contact: "للتواصل عبر واتساب:",
+    designedBy: "تم تطوير المنصة بواسطة: {{name}}",
+    contact: "واتساب:",
     platformName: "الحصان",
     whatsappMessage: "مرحبًا، أنا أتواصل معك من منصة {{company}}.",
     whatsappAriaLabel: "التواصل عبر واتساب على الرقم {{phone}}",

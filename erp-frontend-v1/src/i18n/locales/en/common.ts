@@ -236,7 +236,7 @@ export const common = {
   all: "All",
 
   footer: {
-    designedBy: "Designed by {{name}}",
+    designedBy: "Platform developed by {{name}}",
     contact: "WhatsApp:",
     platformName: "Al-Hosan",
     whatsappMessage: "Hello, I am contacting you from {{company}} platform.",
