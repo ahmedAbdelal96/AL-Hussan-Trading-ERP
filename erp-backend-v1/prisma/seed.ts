@@ -251,8 +251,8 @@ async function main() {
 
     console.log('\n🔑 TEST CREDENTIALS:');
     console.log('-'.repeat(60));
-    console.log('Email:    admin@erp.sys');
-    console.log('Password: Admin@123456');
+    console.log('Demo Email:    demo@erp.sys');
+    console.log('Demo Password: Demo@123456');
     console.log('-'.repeat(60));
     console.log('All users use the same password for testing purposes.');
     console.log('='.repeat(60) + '\n');

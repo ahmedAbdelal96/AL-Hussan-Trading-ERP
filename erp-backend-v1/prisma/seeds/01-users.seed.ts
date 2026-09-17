@@ -109,6 +109,31 @@ export async function seedUsers(prisma: PrismaClient) {
     });
   }
 
+  // Demo User - full SUPERADMIN access for product demonstrations and UAT
+  const demoUser = await prisma.user.create({
+    data: {
+      email: 'demo@erp.sys',
+      password: await bcrypt.hash('Demo@123456', 10),
+      firstName: 'Demo',
+      lastName: 'Account',
+      phone: '+201500000000',
+      isActive: true,
+      tokenVersion: 1,
+    },
+  });
+
+  if (superAdminRole) {
+    await prisma.userRole.create({
+      data: {
+        userId: demoUser.id,
+        roleId: superAdminRole.id,
+        grantedBy: superAdmin.id,
+        isTemporary: false,
+        isActive: true,
+      },
+    });
+  }
+
   // Project/Operations Manager
   const projectManager = await prisma.user.create({
     data: {
@@ -215,6 +240,7 @@ export async function seedUsers(prisma: PrismaClient) {
 
   console.log('✅ Users created and linked to roles:', {
     superAdmin: `${superAdmin.id} (SUPERADMIN)`,
+    demoUser: `${demoUser.id} (SUPERADMIN)`,
     itAdmin: `${itAdmin.id} (IT_ADMIN)`,
     admin: `${admin.id} (ADMIN)`,
     projectManager: `${projectManager.id} (OPS_MANAGER)`,
@@ -225,6 +251,7 @@ export async function seedUsers(prisma: PrismaClient) {
 
   return {
     superAdmin,
+    demoUser,
     itAdmin,
     admin,
     projectManager,
