@@ -59,6 +59,48 @@ type ModuleName =
   | "users"
   | "executive";
 
+function repairMojibake(value: string): string {
+  if (!/[ØÙâÂÃ]/.test(value)) return value;
+
+  try {
+    const windows1252Bytes: Record<string, number> = {
+      "€": 0x80,
+      "‚": 0x82,
+      "ƒ": 0x83,
+      "„": 0x84,
+      "…": 0x85,
+      "†": 0x86,
+      "‡": 0x87,
+      "ˆ": 0x88,
+      "‰": 0x89,
+      "Š": 0x8a,
+      "‹": 0x8b,
+      "Œ": 0x8c,
+      "Ž": 0x8e,
+      "‘": 0x91,
+      "’": 0x92,
+      "“": 0x93,
+      "”": 0x94,
+      "•": 0x95,
+      "–": 0x96,
+      "—": 0x97,
+      "˜": 0x98,
+      "™": 0x99,
+      "š": 0x9a,
+      "›": 0x9b,
+      "œ": 0x9c,
+      "ž": 0x9e,
+    };
+    const bytes = Uint8Array.from(value, (character) =>
+      windows1252Bytes[character] ?? character.charCodeAt(0) & 0xff,
+    );
+    const decoded = new TextDecoder("utf-8").decode(bytes);
+    return decoded.includes("�") ? value : decoded;
+  } catch {
+    return value;
+  }
+}
+
 const MODULE_METADATA: Record<
   ModuleName,
   {
@@ -563,7 +605,9 @@ export default function CategoryReportsPage() {
       <PageShell size="wide" density="compact" className="py-8">
         <div className="text-center">
           <p className="text-lg text-muted-foreground">
-            {isArabic ? "Ø§Ù„ÙØ¦Ø© ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯Ø©" : "Category not found"}
+            {repairMojibake(
+              isArabic ? "Ø§Ù„ÙØ¦Ø© ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯Ø©" : "Category not found",
+            )}
           </p>
         </div>
       </PageShell>
@@ -571,10 +615,12 @@ export default function CategoryReportsPage() {
   }
 
   const ModuleIcon = moduleInfo.icon;
-  const moduleTitle = isArabic ? moduleInfo.title.ar : moduleInfo.title.en;
+  const moduleTitle = repairMojibake(
+    isArabic ? moduleInfo.title.ar : moduleInfo.title.en,
+  );
   const moduleDesc = isArabic
-    ? moduleInfo.description.ar
-    : moduleInfo.description.en;
+    ? repairMojibake(moduleInfo.description.ar)
+    : repairMojibake(moduleInfo.description.en);
 
   return (
     <PageShell size="wide" density="compact" className="py-8">
@@ -600,7 +646,9 @@ export default function CategoryReportsPage() {
               {moduleReports.length}
             </Badge>
             <span className="text-muted-foreground">
-              {isArabic ? "ØªÙ‚Ø±ÙŠØ± Ù…ØªØ§Ø­" : "reports available"}
+              {repairMojibake(
+                isArabic ? "ØªÙ‚Ø±ÙŠØ± Ù…ØªØ§Ø­" : "reports available",
+              )}
             </span>
           </div>
           <div className="h-4 w-px bg-border" />
@@ -609,7 +657,9 @@ export default function CategoryReportsPage() {
               {moduleReports.filter((r) => r.isPremium).length}
             </Badge>
             <span className="text-muted-foreground">
-              {isArabic ? "ØªÙ‚Ø±ÙŠØ± Ù…ØªÙ‚Ø¯Ù…" : "premium reports"}
+              {repairMojibake(
+                isArabic ? "ØªÙ‚Ø±ÙŠØ± Ù…ØªÙ‚Ø¯Ù…" : "premium reports",
+              )}
             </span>
           </div>
         </div>
@@ -620,17 +670,23 @@ export default function CategoryReportsPage() {
         <div className="text-center py-12">
           <BarChart3 className="h-16 w-16 mx-auto text-muted-foreground opacity-50 mb-4" />
           <p className="text-lg text-muted-foreground">
-            {isArabic ? "Ù„Ø§ ØªÙˆØ¬Ø¯ ØªÙ‚Ø§Ø±ÙŠØ± Ù…ØªØ§Ø­Ø©" : "No reports available"}
+            {repairMojibake(
+              isArabic
+                ? "Ù„Ø§ ØªÙˆØ¬Ø¯ ØªÙ‚Ø§Ø±ÙŠØ± Ù…ØªØ§Ø­Ø©"
+                : "No reports available",
+            )}
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {moduleReports.map((report) => {
             const ReportIcon = report.icon;
-            const title = isArabic ? report.title.ar : report.title.en;
+            const title = repairMojibake(
+              isArabic ? report.title.ar : report.title.en,
+            );
             const description = isArabic
-              ? report.description.ar
-              : report.description.en;
+              ? repairMojibake(report.description.ar)
+              : repairMojibake(report.description.en);
 
             return (
               <Card
@@ -653,7 +709,9 @@ export default function CategoryReportsPage() {
                     {report.isPremium && (
                       <Badge className={getStatusBadgeClass("purple", "gap-1")}>
                         <Sparkles className="h-3 w-3" />
-                        {isArabic ? "Ù…ØªÙ‚Ø¯Ù…" : "Premium"}
+                        {repairMojibake(
+                          isArabic ? "Ù…ØªÙ‚Ø¯Ù…" : "Premium",
+                        )}
                       </Badge>
                     )}
                   </div>

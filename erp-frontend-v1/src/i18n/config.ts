@@ -8,6 +8,67 @@ type SupportedLanguage = "ar" | "en";
 
 type TranslationTree = Record<string, unknown>;
 
+const WINDOWS_1252_BYTES: Record<string, number> = {
+  "€": 0x80,
+  "‚": 0x82,
+  "ƒ": 0x83,
+  "„": 0x84,
+  "…": 0x85,
+  "†": 0x86,
+  "‡": 0x87,
+  "ˆ": 0x88,
+  "‰": 0x89,
+  "Š": 0x8a,
+  "‹": 0x8b,
+  "Œ": 0x8c,
+  "Ž": 0x8e,
+  "‘": 0x91,
+  "’": 0x92,
+  "“": 0x93,
+  "”": 0x94,
+  "•": 0x95,
+  "–": 0x96,
+  "—": 0x97,
+  "˜": 0x98,
+  "™": 0x99,
+  "š": 0x9a,
+  "›": 0x9b,
+  "œ": 0x9c,
+  "ž": 0x9e,
+  "Ÿ": 0x9f,
+};
+
+// Some report translations were saved as UTF-8 text decoded as Latin-1.
+// Repair those strings at the resource boundary so every page receives valid text.
+function repairMojibake(value: unknown): unknown {
+  if (typeof value === "string") {
+    if (!/[ØÙâÂÃ]/.test(value)) return value;
+
+    try {
+      const bytes = Uint8Array.from(value, (character) =>
+        WINDOWS_1252_BYTES[character] ?? character.charCodeAt(0) & 0xff,
+      );
+      const decoded = new TextDecoder("utf-8").decode(bytes);
+      return decoded.includes("�") ? value : decoded;
+    } catch {
+      return value;
+    }
+  }
+
+  if (Array.isArray(value)) return value.map(repairMojibake);
+
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, nestedValue]) => [
+        key,
+        repairMojibake(nestedValue),
+      ]),
+    );
+  }
+
+  return value;
+}
+
 const languageLoaders: Record<SupportedLanguage, () => Promise<TranslationTree>> = {
   ar: async () => {
     const module = await import("./locales/ar");
@@ -47,7 +108,9 @@ export async function ensureLanguageLoaded(
     return normalizedLanguage;
   }
 
-  const translationResource = await languageLoaders[normalizedLanguage]();
+  const translationResource = repairMojibake(
+    await languageLoaders[normalizedLanguage](),
+  ) as TranslationTree;
 
   i18n.addResourceBundle(
     normalizedLanguage,
